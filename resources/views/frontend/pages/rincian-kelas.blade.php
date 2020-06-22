@@ -13,18 +13,16 @@
             </div>
         </div>
         <div class="col-md-4">
-            <h3 class="nama-kelas text-expert">Autocad Basic Class</h3>
+            <h3 class="nama-kelas text-expert">{{ $course->nama_kelas }}</h3>
             <p class="font-16 text-white">20 Video Pembelajaran (3 Jam 40 Menit)</p>
             <p class="font-18 text-white"><b>Rating</b></p>
             <p>
-                <i class="fa fa-star text-warning"></i>
-                <i class="fa fa-star text-warning"></i>
-                <i class="fa fa-star text-warning"></i>
-                <i class="fa fa-star text-warning"></i>
-                <i class="fa fa-star text-warning"></i>
+                @foreach (range(1, $course->rating_kelas) as $rating)
+                    <i class="fa fa-star text-warning"></i>
+                @endforeach
             </p>
-            <h4 class="harga-asli text-expert">Rp. 490.000/Kelas</h4>
-            <h3 class="harga-diskon text-expert text-white">Rp. 199.000/Kelas</h3>
+            <h4 class="harga-asli text-expert"><strike>Rp. {{ number_format($course->harga_kelas+190000, 2, ',', '.') }}/Kelas</strike></h4>
+            <h3 class="harga-diskon text-expert text-white">Rp. {{ number_format($course->harga_kelas, 2, ',','.') }}</h3>
             <p class="font-16 text-white">( 20 Chapter + Ebook )</p>
             <a href="">
                 <button class="btn btn-danger btn-block">Beli Sekarang</button>
@@ -35,13 +33,7 @@
     <div class="row">
         <div class="col-md-12">
             <p class="diskripsi-kelas">
-                                Autodesk AutoCAD merupakan sebuah program yang biasa digunakan untuk tujuan tertentu
-                dalam menggambar serta merancang dengan bantuan komputer dalam pembentukan model
-                serta bentuk dua dan tiga dimensi, program ini dapat digunakan dalam semua bidang kerja
-                terutama dalam bidang-bidang yang memerlukan keterampilan khusus seperti bidang
-                Mekanikal Engineering, Sipil, Arsitektur, Desain Grafik, dan semua bidang yang berkaitan
-                dengan penggunaan CAD.
-                Jadi tunggu apalagi? upgrade skill kamu sekarang juga!
+                {!! $course->diskripsi_kelas !!}
             </p>
         </div>
     </div>

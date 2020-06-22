@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- home start -->
+<!-- home start -->
 <section class="bg-home bg-gradient" id="home">
     <div class="home-center">
         <div class="home-desc-center">
@@ -50,128 +50,42 @@
         <!-- end row -->
 
         <div class="row">
+            @foreach ($courses as $course)
             <div class="col-lg-3">
-                <div class="card shadow rounded-sm p-2 dropdown dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer">
+                <div class="card shadow rounded-sm p-2 dropdown">
                     <div class="card-img-top">
-                        <img class="w-100" src="{{ asset('/frontend/assets/course/course-1.jpg') }}" alt="">
+                        <img class="w-100" src="{{ asset('thumbnail-kelas') .'/'  . $course->thumbnail }}" alt="">
                     </div>
-                    <div class="course-text" >
+                    <div class="course-text dropdown-toggle"  type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="card-text">
-                            <h4 class="mb-2">Responsive Layouts</h4>
+                            <h4 class="mb-2 "> {{ $course->nama_kelas }} </h4>
                             <small class="text-muted">Mechanichal Analysis </small>
                         </div>
                         <div class="card-text mt-2">
                             <div class="badge bg-soft-info text-info p-1">
                                 1 Jam 53 Menit
                             </div>
-
                             <div class="badge bg-soft-info text-info p-1 float-right">
-                                <i class="fa fa-user-graduate mr-1 "></i>Abd. Asis
+                                <i class="fa fa-user-graduate mr-1 "></i>{{ $course->nama_pengajar }}
                             </div>
                         </div>
                     </div>
-
-                    <div class="dropdown-menu w-100" id="level-kelas" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Mudah</a>
-                        <a class="dropdown-item" href="#">Intermediate</a>
-                        <a class="dropdown-item" href="#">Expert</a>
-                      </div>
+                    <div class="dropdown-menu w-100" id="level-kelas" aria-labelledby="dropdownMenu2">
+                        <a href="{{ route('kelas.rincian', ['nama_kelas' => $course->nama_kelas, 'level_kelas' => $course->level_kelas]) }}">
+                            <button class="dropdown-item" type="button">Facebook</button>
+                        </a>
+                        <button class="dropdown-item" type="button">Another action</button>
+                        <button class="dropdown-item" type="button">Something else here</button>
+                    </div>
                 </div>
             </div>
-
-            <div class="col-lg-3">
-                <div class="card shadow rounded-sm p-2 dropdown dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer">
-                    <div class="card-img-top">
-                        <img class="w-100" src="{{ asset('/frontend/assets/course/course-1.jpg') }}" alt="">
-                    </div>
-                    <div class="course-text" >
-                        <div class="card-text">
-                            <h4 class="mb-2">Responsive Layouts</h4>
-                            <small class="text-muted">Mechanichal Analysis </small>
-                        </div>
-                        <div class="card-text mt-2">
-                            <div class="badge bg-soft-info text-info p-1">
-                                1 Jam 53 Menit
-                            </div>
-
-                            <div class="badge bg-soft-info text-info p-1 float-right">
-                                <i class="fa fa-user-graduate mr-1 "></i>Abd. Asis
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="dropdown-menu w-100" id="level-kelas" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Mudah</a>
-                        <a class="dropdown-item" href="#">Intermediate</a>
-                        <a class="dropdown-item" href="#">Expert</a>
-                      </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3">
-                <div class="card shadow rounded-sm p-2 dropdown dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer">
-                    <div class="card-img-top">
-                        <img class="w-100" src="{{ asset('/frontend/assets/course/course-1.jpg') }}" alt="">
-                    </div>
-                    <div class="course-text" >
-                        <div class="card-text">
-                            <h4 class="mb-2">Responsive Layouts</h4>
-                            <small class="text-muted">Mechanichal Analysis </small>
-                        </div>
-                        <div class="card-text mt-2">
-                            <div class="badge bg-soft-info text-info p-1">
-                                1 Jam 53 Menit
-                            </div>
-
-                            <div class="badge bg-soft-info text-info p-1 float-right">
-                                <i class="fa fa-user-graduate mr-1 "></i>Abd. Asis
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="dropdown-menu w-100" id="level-kelas" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Mudah</a>
-                        <a class="dropdown-item" href="#">Intermediate</a>
-                        <a class="dropdown-item" href="#">Expert</a>
-                      </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3">
-                <div class="card shadow rounded-sm p-2 dropdown dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer">
-                    <div class="card-img-top">
-                        <img class="w-100" src="{{ asset('/frontend/assets/course/course-1.jpg') }}" alt="">
-                    </div>
-                    <div class="course-text" >
-                        <div class="card-text">
-                            <h4 class="mb-2">Responsive Layouts</h4>
-                            <small class="text-muted">Mechanichal Analysis </small>
-                        </div>
-                        <div class="card-text mt-2">
-                            <div class="badge bg-soft-info text-info p-1">
-                                1 Jam 53 Menit
-                            </div>
-
-                            <div class="badge bg-soft-info text-info p-1 float-right">
-                                <i class="fa fa-user-graduate mr-1 "></i>Abd. Asis
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="dropdown-menu w-100" id="level-kelas" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Mudah</a>
-                        <a class="dropdown-item" href="#">Intermediate</a>
-                        <a class="dropdown-item" href="#">Expert</a>
-                      </div>
-                </div>
-            </div>
-
-            <div class="mx-auto mt-4">
-                <button class="btn btn-outline-success btn-lg">LIHAT SEMUA KURSUS</button>
-            </div>
-
-
+            @endforeach
         </div>
+        <a href="" class="text-center">
+            <button type="button" class="btn btn-success waves-effect waves-light">
+                Lihat Semua Kursus<span class="btn-label-right"><i class="mdi mdi-arrow-right-bold"></i></span>
+            </button>
+        </a>
         <!-- end row -->
     </div> <!-- end container-fluid -->
 </section>
@@ -237,8 +151,6 @@
     </div> <!-- end container-fluid -->
 </section>
 <!-- available demos end -->
-
-
 
 <!-- testimonial start -->
 <section class="section bg-light" id="clients">

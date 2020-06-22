@@ -15,13 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', 'Backend\CourseController@dashboard')->name('admin.dashboard');
     Route::resource('courses', 'Backend\CourseController');
     Route::resource('categories', 'Backend\CategoryController');
+    Route::get('materi/{nama_kelas}', 'Backend\MateriController@create')->name('materi.create');
 });
 
 Route::get('/', 'Frontend\FrontendController@index');
 Route::get('kategori-kelas', 'Frontend\FrontendController@kelas')->name('kelas');
-Route::get('/kelas/nama-kelas', 'Frontend\FrontendController@rincianKelas')->name('kelas.rincian');
+Route::get('/kelas', 'Frontend\FrontendController@rincianKelas')->name('kelas.rincian');
 Route::get('/pembayaran', 'Frontend\FrontendController@pembayaran')->name('pembayaran');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
