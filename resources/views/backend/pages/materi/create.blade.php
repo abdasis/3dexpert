@@ -28,15 +28,15 @@
                     <div class="card-title">
                         <h4></h4>
                     </div>
-                    <form action="{{ route('courses.store') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('materi.store', ['nama_kelas' => $kelas]) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="">Nama Materi</label>
-                            <input type="text" class="form-control" name="nama_kelas"  placeholder="Nama Kelas">
+                            <input type="text" class="form-control" name="nama_materi"  placeholder="Nama Kelas">
                         </div>
                         <div class="form-group">
                             <label for="">Diskripsi Materi</label>
-                            <textarea  placeholder="Masukan Diksirpsi Kelas" name="diskripsi_kelas">
+                            <textarea  placeholder="Masukan Diksirpsi Kelas" name="diskripsi_materi">
 
                             </textarea>
                         </div>
@@ -44,7 +44,7 @@
                         <div class="form-group">
                             <label for="thumbail_kelas">Video Materi</label>
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="trailer" name="trailer">
+                                <input type="file" class="custom-file-input" id="trailer" name="video_materi">
                                 <label class="custom-file-label" for="trailer">Pilih Video Materi</label>
                             </div>
                         </div>

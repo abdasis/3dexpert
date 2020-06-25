@@ -16,7 +16,7 @@ class CreateCoursesTable extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('nama_kelas', 100);
-            $table->string('diskripsi_kelas', 100)->nullable()->default('diskripsi kelas');
+            $table->longText('diskripsi_kelas', 100)->nullable();
             $table->string('level_kelas', 100);
             $table->string('nama_pengajar', 100);
             $table->string('harga_kelas', 100);

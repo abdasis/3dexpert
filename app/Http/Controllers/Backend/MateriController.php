@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class MateriController extends Controller
 {
@@ -35,7 +37,28 @@ class MateriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $course = Course::where('nama_kelas', $request->get('nama_kelas'))->first();
+        if ($request->hasFile('video_materi')) {
+            $video = $request->file('video_materi');
+            $video_name = date('dmyhs-') . Str::slug($request->get('nama_materi'), '-') . '.' . $video->getClientOriginalExtension();
+            $video->move(public_path('galeri-materi'), $video_name);
+        }else{
+            $video_name = 'default-video.mp4';
+        }
+        $tambahCourse = $course->materis()->create([
+            'judul_materi' => $request->get('nama_materi'),
+            'diskripsi_materi' => $request->get('diskripsi_materi'),
+            'video_materi' => $video_name,
+            'ebook_materi' => 'default-ebook.pdf',
+            'durasi_materi' => '1 Jam 2 Menit',
+        ]);
+
+        if ($tambahCourse) {
+            return 'Berhasil disimpan';
+        }
+
+
+
     }
 
     /**

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
     <div class="container-fluid">
         <!-- LOGO -->
-        <a class="logo text-uppercase" href="index.html">
+        <a class="logo text-uppercase" href="{{ url('/') }}">
             <img src="{{ url('/') }}/frontend/assets/images/logo-3dexpert.png" alt="" class="logo-light" height="21" />
             <img src="{{ url('/') }}/frontend/assets/images/logo-3dexpert.png" alt="" class="logo-dark" height="21" />
         </a>
@@ -24,7 +24,7 @@
                     <a href="#pricing" class="nav-link">Transaksi</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#pricing" class="nav-link"> <i class="fa fa-user-circle"></i> Profil</a>
+                    <a href="{{ route('profile') }}" class="nav-link"> <i class="fa fa-user-circle"></i> Profil</a>
 
                 </li>
             </ul>

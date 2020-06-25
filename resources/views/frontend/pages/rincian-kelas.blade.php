@@ -7,8 +7,8 @@
         <div class="col-md-8">
             <div class="container">
                 <h4 class="text-expert">Trailer Kelas</h4>
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+                <div class="embed-responsive embed-responsive-21by9">
+                    <iframe class="embed-responsive-item" src="{{ asset('trailer-kelas') . '/' . $course->trailer }}" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
             <h4 class="harga-asli text-expert"><strike>Rp. {{ number_format($course->harga_kelas+190000, 2, ',', '.') }}/Kelas</strike></h4>
             <h3 class="harga-diskon text-expert text-white">Rp. {{ number_format($course->harga_kelas, 2, ',','.') }}</h3>
             <p class="font-16 text-white">( 20 Chapter + Ebook )</p>
-            <a href="">
+            <a href="{{ Auth::check() ? route('order.create') : route('login') }}">
                 <button class="btn btn-danger btn-block">Beli Sekarang</button>
             </a>
         </div>
@@ -40,24 +40,26 @@
 
     <div class="row">
         <div class="col-md-12">
-            <div class="accordion b-radius" id="accordionExample">
+            @foreach ($materis as $materi)
+            <div class="accordion b-radius mb-2" id="accordion{{ $materi->id }}" >
                 <div class="card-silabus bg-black border-expert b-radius ">
-                    <div class="card-header bg-black b-radius" id="headingOne">
-                        <h4 class="text-left text-white" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <i class="fa fa-plus-circle"></i> Apa itu 3D Expert.id?
+                    <div class="card-header bg-black b-radius" id="heading{{ $materi->id }}">
+                        <h4 class="text-left text-white" type="button" data-toggle="collapse" data-target="#collapse{{ $materi->id }}" aria-expanded="true" aria-controls="collapse{{ $materi->id }}">
+                            <i class="fa fa-plus-circle"></i> {{ $materi->judul_materi }}
                         </h4>
                     </div>
 
-                    <div id="collapseOne" class="collapse text-white" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div id="collapse{{ $materi->id }}" class="collapse text-white" aria-labelledby="heading{{ $materi->id }}" data-parent="#accordion{{ $materi->id }}">
                         <div class="card-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            {!! $materi->diskripsi_materi !!}
                         </div>
                     </div>
                 </div>
             </div>
 
+            @endforeach
             <div class="mt-5">
-                <a href="#">
+                <a href="https://facebook.com">
                     <button class="btn btn-danger btn-block"><i class="fa fa-shopping-basket mr-1"></i>Beli Kelas</button>
                 </a>
             </div>

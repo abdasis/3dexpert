@@ -16,10 +16,11 @@ class CreateMaterisTable extends Migration
         Schema::create('materis', function (Blueprint $table) {
             $table->id();
             $table->string('judul_materi', 100);
-            $table->string('diskripsi_materi', 100);
+            $table->longText('diskripsi_materi', 100);
             $table->string('video_materi', 250);
             $table->string('ebook_materi', 250)->nullable();
             $table->string('durasi_materi', 100)->nullable()->default('text');
+            $table->foreignId('course_id')->constrained();
             $table->timestamps();
         });
     }

@@ -762,6 +762,10 @@ img.img-circle.img-fluid.mx-auto.d-block.foto-peserta {
     margin-bottom: 100px;
 }
 
+.mt-100 {
+    margin-top: 100px;
+}
+
 .text-expert {
     color: #85FEF9;
 }
@@ -800,4 +804,8 @@ img.img-circle.img-fluid.mx-auto.d-block.foto-peserta {
     color: #17706d;
     background-color: #85FEF9;
     border-color: #63f7f2
+}
+
+.border-top-expert {
+    border-top: 4px solid #28D6D7;
 }

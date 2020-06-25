@@ -71,17 +71,21 @@
                         </div>
                     </div>
                     <div class="dropdown-menu w-100" id="level-kelas" aria-labelledby="dropdownMenu2">
-                        <a href="{{ route('kelas.rincian', ['nama_kelas' => $course->nama_kelas, 'level_kelas' => $course->level_kelas]) }}">
-                            <button class="dropdown-item" type="button">Facebook</button>
+                        <a href="{{ route('kelas.rincian', ['nama_kelas' => $course->nama_kelas, 'level_kelas' => 'Pemula']) }}">
+                            <button class="dropdown-item" type="button">Pemula</button>
                         </a>
-                        <button class="dropdown-item" type="button">Another action</button>
-                        <button class="dropdown-item" type="button">Something else here</button>
+                        <a href="{{ route('kelas.rincian', ['nama_kelas' => $course->nama_kelas, 'level_kelas' => 'Intermediate']) }}">
+                            <button class="dropdown-item" type="button">Intermediate</button>
+                        </a>
+                        <a href="{{ route('kelas.rincian', ['nama_kelas' => $course->nama_kelas, 'level_kelas' => 'Expert']) }}">
+                            <button class="dropdown-item" type="button">Expert</button>
+                        </a>
                     </div>
                 </div>
             </div>
             @endforeach
         </div>
-        <a href="" class="text-center">
+        <a href="{{ route('kelas') }}" class="text-center">
             <button type="button" class="btn btn-success waves-effect waves-light">
                 Lihat Semua Kursus<span class="btn-label-right"><i class="mdi mdi-arrow-right-bold"></i></span>
             </button>
