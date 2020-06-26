@@ -9,14 +9,14 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="home-title mo-mb-20">
-                            <h1 class="mb-4 text-black-50">Dunia Terus Berkembang
+                            <h1 class="mb-4 text-black">Dunia Terus Berkembang
                                 Ayo Bergabung Bersama Kami
                                 dan Menjadi Desainer Hebat !</h1>
-                            <p class="text-black-50-50 home-desc mb-5">3D Expert.id merupakan sebuah platform kelas desain 3D online
+                            <p class="text-black home-desc mb-5">3D Expert.id merupakan sebuah platform kelas desain 3D online
                                 yang membantu kamu mendapat ilmu desain 3D dengan mudah
                                 dan fleksibel</p>
                             <div class="subscribe">
-                                <button class="btn btn-blue" style="opacity: .9">Daftar Sekarang</button>
+                                <button class="btn btn-dark">Daftar Sekarang</button>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
 <!-- home end -->
 
 <!-- features start -->
-<section class="section-sm" id="features">
+<section class="section-sm bg-gradient" id="features">
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-lg-6">
@@ -157,7 +157,7 @@
 <!-- available demos end -->
 
 <!-- testimonial start -->
-<section class="section bg-light" id="clients">
+<section class="section bg-gradient" id="clients">
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-lg-6">
@@ -196,7 +196,7 @@
 <!-- testimonial end -->
 
 <!-- faqs start -->
-<section class="section" id="faq">
+<section class="section bg-gradient" id="faq">
     <div class="container-fluid">
 
         <div class="row justify-content-center">
@@ -228,13 +228,13 @@
 
 
                     <div class="card">
-                        <div class="card-header bg-white" id="headingOne">
-                            <h4 class="text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <div class="card-header bg-white" id="headingdua">
+                            <h4 class="text-left" type="button" data-toggle="collapse" data-target="#collapsedua" aria-expanded="true" aria-controls="collapsedua">
                                 <i class="fa fa-plus-circle"></i> Apa yang saya dapatkan jika mendaftar di 3D Expert.id?
                             </h4>
                         </div>
 
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div id="collapsedua" class="collapse" aria-labelledby="headingdua" data-parent="#accordionExample">
                             <div class="card-body">
                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                             </div>
@@ -242,13 +242,13 @@
                     </div>
 
                     <div class="card">
-                        <div class="card-header bg-white" id="headingOne">
-                            <h4 class="text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <div class="card-header bg-white" id="headingtiga">
+                            <h4 class="text-left" type="button" data-toggle="collapse" data-target="#collapsetiga" aria-expanded="true" aria-controls="collapsetiga">
                                 <i class="fa fa-plus-circle"></i> Bagaimana metode belajar di 3D Expert.id?
                             </h4>
                         </div>
 
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div id="collapsetiga" class="collapse" aria-labelledby="headingtiga" data-parent="#accordionExample">
                             <div class="card-body">
                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                             </div>
@@ -256,13 +256,13 @@
                     </div>
 
                     <div class="card">
-                        <div class="card-header bg-white" id="headingOne">
-                            <h4 class="text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <div class="card-header bg-white" id="headingempat">
+                            <h4 class="text-left" type="button" data-toggle="collapse" data-target="#collapseempat" aria-expanded="true" aria-controls="collapseempat">
                                 <i class="fa fa-plus-circle"></i> Apakah 3D Expert.id membuka kelas offline?
                             </h4>
                         </div>
 
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div id="collapseempat" class="collapse" aria-labelledby="headingempat" data-parent="#accordionExample">
                             <div class="card-body">
                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                             </div>
@@ -270,13 +270,13 @@
                     </div>
 
                     <div class="card">
-                        <div class="card-header bg-white" id="headingOne">
-                            <h4 class="text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <div class="card-header bg-white" id="headinglima">
+                            <h4 class="text-left" type="button" data-toggle="collapse" data-target="#collapselima" aria-expanded="true" aria-controls="collapselima">
                                 <i class="fa fa-plus-circle"></i>Bagaimana dengan jadwal belajarnya?
                             </h4>
                         </div>
 
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div id="collapselima" class="collapse" aria-labelledby="headinglima" data-parent="#accordionExample">
                             <div class="card-body">
                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                             </div>
