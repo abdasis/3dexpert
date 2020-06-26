@@ -7,6 +7,7 @@ use App\Http\Requests\CourseRequest;
 use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Str;
 use League\CommonMark\Inline\Element\Code;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -19,6 +20,16 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware(function($request, $next){
+            if (Gate::allows('admin-access')) {
+                return $next($request);
+            }
+            abort(403, 'Anda tidak memiliki cukup hak akses');
+        });
+    }
     public function index()
     {
         $courses = Course::all();
@@ -159,5 +170,6 @@ class CourseController extends Controller
 
     public function Dashboard()
     {
+        return view('backend.index');
     }
 }

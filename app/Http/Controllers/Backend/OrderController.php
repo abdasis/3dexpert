@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use Illuminate\Http\Request;
+use App\User;
 
 class OrderController extends Controller
 {
@@ -14,7 +16,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::with('user')->get();
+        return view('backend.pages.orders.index')->withOrders($orders);
     }
 
     /**
@@ -69,7 +72,10 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $order = Order::find($id);
+        $order->status = 'AKTIF';
+        $order->save();
+        return redirect()->back()->withStatus('Anggota Beru sudah di verifikasi');
     }
 
     /**
@@ -80,6 +86,8 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $order = Order::find($id);
+        $order->delete();
+        return redirect()->back()->withStatus('Orderan Berhasil Dihapus');
     }
 }

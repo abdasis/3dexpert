@@ -25,6 +25,7 @@
     </head>
 
     <body style="background: #000000">
+        @include('sweetalert::alert')
 
         <!--Navbar Start-->
         @include('frontend.includes.navbar')

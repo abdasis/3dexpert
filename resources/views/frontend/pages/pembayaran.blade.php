@@ -26,7 +26,7 @@
                     </div>
                     <div class="card-body">
                         <p class="text-center">Jumlah Tagihan</p>
-                        <h3 class="text-center">Rp. 199.000</h3>
+                        <h3 class="text-center">Rp. {{ number_format($order->total_price, 2, ',', '.') }}</h3>
                     </div>
                     <div class="card-body">
                         <p class="text-center m-0">

@@ -24,7 +24,7 @@
             <h4 class="harga-asli text-expert"><strike>Rp. {{ number_format($course->harga_kelas+190000, 2, ',', '.') }}/Kelas</strike></h4>
             <h3 class="harga-diskon text-expert text-white">Rp. {{ number_format($course->harga_kelas, 2, ',','.') }}</h3>
             <p class="font-16 text-white">( 20 Chapter + Ebook )</p>
-            <a href="{{ Auth::check() ? route('order.create') : route('login') }}">
+            <a href="{{ Auth::check() ? route('order.create', ['kelas' => $course->nama_kelas, 'token' => csrf_token()]) : route('login') }}">
                 <button class="btn btn-danger btn-block">Beli Sekarang</button>
             </a>
         </div>

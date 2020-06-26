@@ -43,22 +43,22 @@
                                 <tr>
                                     <th>Universitas</th>
                                     <th>:</th>
-                                    <td>{{ empty(Auth::user()->biodata->universitas) ? '-' : Auth::user()->biodata->universitas  }}</td>
+                                    <td>{{ empty(Auth::user()->universitas) ? '-' : Auth::user()->universitas  }}</td>
                                 </tr>
                                 <tr>
                                     <th>Jenis Kelamin</th>
                                     <th>:</th>
-                                    <td>{{ empty(Auth::user()->biodata->jenis_kelamin) ? '-' : Auth::user()->biodata->jenis_kelamin  }}</td>
+                                    <td>{{ empty(Auth::user()->jenis_kelamin) ? '-' : Auth::user()->jenis_kelamin  }}</td>
                                 </tr>
                                 <tr>
                                     <th>Alamat Lengkap</th>
                                     <th>:</th>
-                                    <td>{{ empty(Auth::user()->biodata->alamat_lengkap) ? '-' : Auth::user()->biodata->alamat_lengkap}}</td>
+                                    <td>{{ empty(Auth::user()->alamat_lengkap) ? '-' : Auth::user()->alamat_lengkap}}</td>
                                 </tr>
                                 <tr>
                                     <th>Biodata</th>
                                     <th>:</th>
-                                    <td>{{ empty(Auth::user()->biodata->biodata) ? '-' : Auth::user()->biodata->biodata }}</td>
+                                    <td>{{ empty(Auth::user()) ? '-' : Auth::user()->biodata }}</td>
                                 </tr>
                             </tbody>
 

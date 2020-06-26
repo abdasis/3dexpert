@@ -22,7 +22,7 @@
                     <div class="col-xl-4 offset-xl-2 col-lg-5 offset-lg-1 col-md-7">
 
                         <div class="card-box border-1 p-4">
-                            <form method="POST" action="{{ route('register') }}">
+                            <form method="POST" action="{{ route('user.store') }}">
                                 @csrf
 
                                 <div class="form-group">

@@ -13,14 +13,13 @@ class CreateBiodatasTable extends Migration
      */
     public function up()
     {
-        Schema::create('biodatas', function (Blueprint $table) {
-            $table->id();
+        Schema::table('users', function (Blueprint $table) {
             $table->string('jenis_kelamin', 100)->nullable();
             $table->string('universitas', 100)->nullable();
             $table->string('alamat_lengkap', 100)->nullable();
             $table->string('biodata', 100)->nullable();
-            $table->foreignId('user_id')->constrained();
-            $table->timestamps();
+            $table->string('roles', 100);
+            $table->string('phone', 100)->nullable()->default('text');
         });
     }
 
@@ -31,6 +30,13 @@ class CreateBiodatasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('biodatas');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('jenis_kelamin');
+            $table->dropColumn('universitas');
+            $table->dropColumn('alamat_lengkap');
+            $table->dropColumn('biodata');
+            $table->dropColumn('roles');
+            $table->dropColumn('phone');
+        });
     }
 }
