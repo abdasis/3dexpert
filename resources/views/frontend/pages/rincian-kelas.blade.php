@@ -24,7 +24,10 @@
             <h4 class="harga-asli text-expert"><strike>Rp. {{ number_format($course->harga_kelas+190000, 2, ',', '.') }}/Kelas</strike></h4>
             <h3 class="harga-diskon text-expert text-white">Rp. {{ number_format($course->harga_kelas, 2, ',','.') }}</h3>
             <p class="font-16 text-white">( 20 Chapter + Ebook )</p>
-            @if ($status === null)
+            <a href="{{ Auth::check() ? route('order.create', ['kelas' => $course->nama_kelas, 'token' => csrf_token()]) : route('login') }}" target="{{ !Auth::check() ? 'blank' : '' }}">
+                <button class="btn btn-danger btn-block py-2" style="background: #E80C27; border-radius: 15px">Beli Sekarang</button>
+            </a>
+            {{-- @if ($status === null)
             <a href="{{ Auth::check() ? route('order.create', ['kelas' => $course->nama_kelas, 'token' => csrf_token()]) : route('login') }}">
                 <button class="btn btn-danger btn-block">Beli Sekarang</button>
             </a>
@@ -32,7 +35,7 @@
             <a href="{{ Auth::check() ? route('order.create', ['kelas' => $course->nama_kelas, 'token' => csrf_token()]) : route('login') }}">
                 <button class="btn btn-danger btn-block">Putar Course</button>
             </a>
-            @endif
+            @endif --}}
         </div>
     </div>
 

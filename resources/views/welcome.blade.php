@@ -50,46 +50,22 @@
         <!-- end row -->
 
         <div class="row">
-            @foreach ($courses as $course)
+            @foreach ($materies as $materi)
             <div class="col-lg-3">
-                <div class="card shadow rounded-sm p-2 dropdown">
+                <div class="card shadow rounded-sm dropdown" style="border-radius: 10px !important; background: rgb(83, 83, 231)">
                     <div class="card-img-top">
-                        <img class="w-100" src="{{ asset('thumbnail-kelas') .'/'  . $course->thumbnail }}" alt="">
+                        <img class="w-100"  style="border-radius: 10px !important" src="{{ asset('thumbnail-materi') .'/'  . $materi->thumbnail_materi }}" alt="">
                     </div>
-                    <div class="course-text dropdown-toggle"  type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="course-text card-body">
                         <div class="card-text">
-                            <h4 class="mb-2 "> {{ $course->nama_kelas }} </h4>
-                            <small class="text-muted">{{ $course->kategori_kelas }} </small>
+                            <h4 class="mb-2 text-white "> <a class="text-white" href="{{ route('kelas.tentang-kelas', ['kelas' => $materi->course->nama_kelas]) }}">{{ $materi->judul_materi }}</a> </h4>
+                            <small class="text-white">{{ $materi->course->kategori_kelas }} </small>
                         </div>
-                        <div class="card-text mt-2">
-                            <div class="badge bg-soft-info text-info p-1">
-                                1 Jam 53 Menit
-                            </div>
-                            <div class="badge bg-soft-info text-info p-1 float-right">
-                                <i class="fa fa-user-graduate mr-1 "></i>{{ $course->nama_pengajar }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dropdown-menu w-100" id="level-kelas" aria-labelledby="dropdownMenu2">
-                        <a href="{{ route('kelas.rincian', ['nama_kelas' => $course->nama_kelas, 'level_kelas' => 'Pemula']) }}">
-                            <button class="dropdown-item" type="button">Pemula</button>
-                        </a>
-                        <a href="{{ route('kelas.rincian', ['nama_kelas' => $course->nama_kelas, 'level_kelas' => 'Intermediate']) }}">
-                            <button class="dropdown-item" type="button">Intermediate</button>
-                        </a>
-                        <a href="{{ route('kelas.rincian', ['nama_kelas' => $course->nama_kelas, 'level_kelas' => 'Expert']) }}">
-                            <button class="dropdown-item" type="button">Expert</button>
-                        </a>
                     </div>
                 </div>
             </div>
             @endforeach
         </div>
-        <a href="{{ route('kelas') }}" class="text-center">
-            <button type="button" class="btn btn-success waves-effect waves-light">
-                Lihat Semua Kursus<span class="btn-label-right"><i class="mdi mdi-arrow-right-bold"></i></span>
-            </button>
-        </a>
         <!-- end row -->
     </div> <!-- end container-fluid -->
 </section>
@@ -212,15 +188,15 @@
         <div class="row justify-content-center">
             <div class="col-md-7">
                 <div class="accordion" id="accordionExample">
-                    <div class="card">
-                        <div class="card-header bg-white" id="headingOne">
+                    <div class="card bg-transparent">
+                        <div class="card-header bg-transparent" id="headingOne">
                             <h4 class="text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 <i class="fa fa-plus-circle"></i> Apa itu 3D Expert.id?
                             </h4>
                         </div>
 
                         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                            <div class="card-body">
+                            <div class="card-body bg-white content-faq">
                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                             </div>
                         </div>

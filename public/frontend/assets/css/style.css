@@ -106,7 +106,7 @@ p {
 .bg-gradient {
     background: url('/frontend/assets/images/background/bg-header.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
 }
 
 .bg-b-decor {
@@ -824,4 +824,17 @@ img.img-circle.img-fluid.mx-auto.d-block.foto-peserta {
 
 .border-top-expert {
     border-top: 4px solid #28D6D7;
+}
+
+.content-faq {
+    border-radius: 20px;
+    border: 1px solid #f7f7f7;
+    margin-left: 40px;
+    font-size: 16px;
+}
+
+.img-banner {
+    height: 650px;
+    width: 100%;
+    object-fit: cover;
 }

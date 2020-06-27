@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Course;
+use App\Models\Materi;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,8 +14,10 @@ class FrontendController extends Controller
     public function index()
     {
         $courses = Course::all();
+        $materi = Materi::where('featured', 'Ya')->with('course')->get();
         return view('welcome')->with([
-            'courses' => $courses
+            'courses' => $courses,
+            'materies' => $materi,
         ]);
     }
 
@@ -28,7 +31,7 @@ class FrontendController extends Controller
 
     public function rincianKelas(Request $request)
     {
-        $statusOrder = Order::where('status', 'AKTIF')->where('user_id', Auth::user()->id)->first();
+        // $statusOrder = Order::where('status', 'AKTIF')->where('user_id', Auth::user()->id)->first();
         $nama_kelas  = $request->get('nama_kelas');
         $level_kelas = $request->get('level_kelas');
         $course = Course::where('nama_kelas', $nama_kelas)->where('level_kelas', $level_kelas)->first();
@@ -36,7 +39,7 @@ class FrontendController extends Controller
             abort(404, 'Tidak ada kelas yang tersedia');
         }else{
             $materis = $course->materis;
-            return view('frontend.pages.rincian-kelas')->withCourse($course)->withMateris($materis)->withStatus($statusOrder);
+            return view('frontend.pages.rincian-kelas')->withCourse($course)->withMateris($materis);
         }
     }
 
@@ -67,5 +70,12 @@ class FrontendController extends Controller
         return view('frontend.pages.kelas-saya')->withCourses($kelas);
 
 
+    }
+
+    public function tentang(Request $request)
+    {
+        $nama_kelas = $request->get('kelas');
+        $kelas = Course::where('nama_kelas', $nama_kelas)->first();
+        return view('frontend.pages.tentang-kelas')->withKelas($kelas);
     }
 }

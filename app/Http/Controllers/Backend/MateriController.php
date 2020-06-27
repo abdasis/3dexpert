@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-
+use RealRashid\SweetAlert\Facades\Alert;
 class MateriController extends Controller
 {
     /**
@@ -45,16 +45,27 @@ class MateriController extends Controller
         }else{
             $video_name = 'default-video.mp4';
         }
+
+        if ($request->hasFile('thumbnail_materi')) {
+            $thumbnail = $request->file('thumbnail_materi');
+            $thumbnail_name = date('dmyhs-') . Str::slug($request->get('nama_materi'), '-') . '.' . $video->getClientOriginalExtension();
+            $thumbnail->move(public_path('thumbnail-materi'), $thumbnail_name);
+        }else{
+            $thumbnail_name = 'default_thumbnail.png';
+        }
         $tambahCourse = $course->materis()->create([
             'judul_materi' => $request->get('nama_materi'),
             'diskripsi_materi' => $request->get('diskripsi_materi'),
             'video_materi' => $video_name,
+            'featured' => $request->get('featured'),
+            'thumbnail_materi' => $thumbnail_name,
             'ebook_materi' => 'default-ebook.pdf',
             'durasi_materi' => '1 Jam 2 Menit',
         ]);
 
         if ($tambahCourse) {
-            return 'Berhasil disimpan';
+            alert()->success('Mantap', 'Materi berhasil di tambahkan');
+            return redirect()->back();
         }
 
 

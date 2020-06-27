@@ -20,6 +20,8 @@ class CreateMaterisTable extends Migration
             $table->string('video_materi', 250);
             $table->string('ebook_materi', 250)->nullable();
             $table->string('durasi_materi', 100)->nullable()->default('text');
+            $table->string('featured', 100)->nullable()->default('Tidak');
+            $table->string('thumbnail_materi', 250)->nullable()->default('default-thumbnail.png');
             $table->foreignId('course_id')->constrained();
             $table->timestamps();
         });

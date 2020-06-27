@@ -49,6 +49,25 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label for="thumbail_materi">Thumbnail Meteri</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="trailer" name="thumbnail_materi">
+                                <label class="custom-file-label" for="trailer">Pilih Thubnail Materi</label>
+                                <small class="text-muted">Diisi bila ingin di tambilkan di home page</small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="featured-materi">Featured Materi</label>
+                            <div class="checkbox checkbox-danger checkbox-circle mb-2">
+                                <input id="checkbox-12" name="featured" type="checkbox" value="Ya">
+                                <label for="checkbox-12">
+                                    Featured
+                                </label>
+                            </div>
+                        </div>
+
 
                         <div class="form-group">
                             <button type="submit" class="btn btn-success waves-effect waves-light">
