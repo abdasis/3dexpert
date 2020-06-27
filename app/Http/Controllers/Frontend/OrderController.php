@@ -59,8 +59,9 @@ class OrderController extends Controller
         $couserOrder = Order::find($orderKelas->id);
         $kelas->orders()->attach($couserOrder, ['quantity'=> '1']);
         return redirect()->route('order.invoice');
-
     }
+
+
 
     /**
      * Display the specified resource.

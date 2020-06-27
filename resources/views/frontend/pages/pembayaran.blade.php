@@ -76,7 +76,6 @@
 
                     <div class="card-body" style="background: #f5f5f5">
                         <h5>Petunjuk Pembayaran</h5>
-
                         <div class="card">
                             <div class="card-header rounded-0" style="background: #f8f8f8">
                                 <h5 class="m-0 p-0">

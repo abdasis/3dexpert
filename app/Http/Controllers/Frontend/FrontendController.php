@@ -28,6 +28,7 @@ class FrontendController extends Controller
 
     public function rincianKelas(Request $request)
     {
+        $statusOrder = Order::where('status', 'AKTIF')->where('user_id', Auth::user()->id)->first();
         $nama_kelas  = $request->get('nama_kelas');
         $level_kelas = $request->get('level_kelas');
         $course = Course::where('nama_kelas', $nama_kelas)->where('level_kelas', $level_kelas)->first();
@@ -35,7 +36,7 @@ class FrontendController extends Controller
             abort(404, 'Tidak ada kelas yang tersedia');
         }else{
             $materis = $course->materis;
-            return view('frontend.pages.rincian-kelas')->withCourse($course)->withMateris($materis);
+            return view('frontend.pages.rincian-kelas')->withCourse($course)->withMateris($materis)->withStatus($statusOrder);
         }
     }
 
@@ -46,7 +47,13 @@ class FrontendController extends Controller
 
     public function profile()
     {
-        return view('frontend.pages.profile');
+        $order = Order::where('user_id', Auth::user()->id)->first();
+        $kelas = $order->courses;
+        if (empty($kelas)) {
+            alert()->warning('Maaf!!!', 'Belum ada kelas yang dibeli');
+            return redirect()->route('kelas');
+        }
+        return view('frontend.pages.kelas-saya')->withCourses($kelas);
     }
 
     public function kelasSaya()

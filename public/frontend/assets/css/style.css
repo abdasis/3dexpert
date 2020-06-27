@@ -109,6 +109,22 @@ p {
     background-repeat: no-repeat;
 }
 
+.bg-b-decor {
+    background: url('/frontend/assets/images/background/bg-b-decor.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-origin: border-box;
+    background-size: cover;
+}
+
+.bg-t-decor {
+    background: url('/frontend/assets/images/background/bg-t-decor.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-origin: border-box;
+    background-size: cover;
+}
+
 
 /**BACK TO TOP**/
 

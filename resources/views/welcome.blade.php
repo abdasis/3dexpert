@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- home start -->
-<section class="bg-home bg-gradient" id="home">
+<section class="bg-home bg-b-decor" id="home">
     <div class="home-center">
         <div class="home-desc-center">
             <div class="container-fluid">
@@ -16,7 +16,7 @@
                                 yang membantu kamu mendapat ilmu desain 3D dengan mudah
                                 dan fleksibel</p>
                             <div class="subscribe">
-                                <button class="btn btn-dark">Daftar Sekarang</button>
+                                <button class="btn btn-light btn-rounded">Daftar Sekarang</button>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
 <!-- home end -->
 
 <!-- features start -->
-<section class="section-sm bg-gradient" id="features">
+<section class="section-sm bg-t-decor" id="features">
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-lg-6">
