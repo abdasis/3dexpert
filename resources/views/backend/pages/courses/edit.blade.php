@@ -55,6 +55,16 @@
                             </select>
                         </div>
                         <div class="form-group">
+                            <label for="kategori_kelas">Kategori Kelas</label>
+                            <select class="form-control" name="kategori_kelas" id="kategori_kelas">
+                                <option value="">Pilih Kategori</option>
+                                <option value="Mechanical Design" {{ $course->kategori_kelas == 'Mechanical Design' ? 'selected' : '' }}>Mechanical Design</option>
+                                <option value="Architecture Design" {{ $course->kategori_kelas == 'Architecture Design' ? 'selected' : '' }}>Architecture Design</option>
+                                <option value="Rendering And Animation" {{ $course->kategori_kelas == 'Rendering And Animation' ? 'selected' : '' }}>Rendering And Animation</option>
+                                <option value="Rencana Anggaran Biaya" {{ $course->kategori_kelas == 'Rencana Anggaran Biaya' ? 'selected' : '' }}>Rencana Anggaran Biaya</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="pengajar">Nama Pemateri</label>
                             <input type="text" value="{{ $course->nama_pengajar }}" class="form-control" name="nama_pengajar" placeholder="Masukan Nama Pengajar">
                         </div>

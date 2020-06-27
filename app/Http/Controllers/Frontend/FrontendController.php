@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Course;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -46,5 +47,18 @@ class FrontendController extends Controller
     public function profile()
     {
         return view('frontend.pages.profile');
+    }
+
+    public function kelasSaya()
+    {
+        $order = Order::where('user_id', Auth::user()->id)->first();
+        $kelas = $order->courses;
+        if (empty($kelas)) {
+            alert()->warning('Maaf!!!', 'Belum ada kelas yang dibeli');
+            return redirect()->route('kelas');
+        }
+        return view('frontend.pages.kelas-saya')->withCourses($kelas);
+
+
     }
 }

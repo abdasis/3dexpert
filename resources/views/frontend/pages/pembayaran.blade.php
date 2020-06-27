@@ -42,7 +42,6 @@
                         <div class="logo-bank">
                             <img src="https://www.bukalapak.com/images/desktop/benefits/jaminan.png" class="rounded mx-auto mt-0 d-block img-thumbnail" width="30px" alt="">
                         </div>
-
                     </div>
 
                     <div class="card-body">

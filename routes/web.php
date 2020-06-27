@@ -38,6 +38,7 @@ Route::post('checkout', 'Frontend\OrderController@store')->name('order.store')->
 Route::get('invoice', 'Frontend\OrderController@invoice')->name('order.invoice')->middleware('auth');
 Route::get('daftar', 'Frontend\UserController@create')->name('user.daftar');
 Route::post('daftar', 'Frontend\UserController@store')->name('user.store');
+Route::get('kelas-saya', 'Frontend\FrontendController@kelasSaya')->name('kelas-saya')->middleware('auth');
 Auth::routes([
     'register' => false,
 ]);

@@ -12,7 +12,7 @@
                             <h1 class="mb-4 text-black">Dunia Terus Berkembang
                                 Ayo Bergabung Bersama Kami
                                 dan Menjadi Desainer Hebat !</h1>
-                            <p class="text-black home-desc mb-5">3D Expert.id merupakan sebuah platform kelas desain 3D online
+                            <p class="mb-5">3D Expert.id merupakan sebuah platform kelas desain 3D online
                                 yang membantu kamu mendapat ilmu desain 3D dengan mudah
                                 dan fleksibel</p>
                             <div class="subscribe">
@@ -59,7 +59,7 @@
                     <div class="course-text dropdown-toggle"  type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="card-text">
                             <h4 class="mb-2 "> {{ $course->nama_kelas }} </h4>
-                            <small class="text-muted">Mechanichal Analysis </small>
+                            <small class="text-muted">{{ $course->kategori_kelas }} </small>
                         </div>
                         <div class="card-text mt-2">
                             <div class="badge bg-soft-info text-info p-1">

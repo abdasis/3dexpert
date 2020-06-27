@@ -23,6 +23,7 @@ class CreateCoursesTable extends Migration
             $table->string('rating_kelas', 100);
             $table->string('trailer', 250);
             $table->string('thumbnail', 250);
+            $table->string('kategori_kelas', 100);
             $table->timestamps();
         });
     }

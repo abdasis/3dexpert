@@ -20,7 +20,7 @@
                     <div class="course-text dropdown-toggle"  type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="card-text">
                             <h4 class="mb-2 "> {{ $course->nama_kelas }} </h4>
-                            <small class="text-muted">Mechanichal Analysis </small>
+                            <small class="text-muted">{{ $course->kategori_kelas }} </small>
                         </div>
                         <div class="card-text mt-2">
                             <div class="badge bg-soft-info text-info p-1">

@@ -18,7 +18,7 @@
                     <a href="{{ route('kelas') }}" class="nav-link">Kategori Kelas</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#demo" class="nav-link">Kelas Saya</a>
+                    <a href="{{ route('kelas-saya') }}" class="nav-link">Kelas Saya</a>
                 </li>
                 <li class="nav-item">
                     <a href="#pricing" class="nav-link">Transaksi</a>

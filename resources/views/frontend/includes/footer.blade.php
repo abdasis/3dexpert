@@ -3,7 +3,7 @@
         <div class="row mb-5">
             <div class="col-lg-3">
                 <div class="footer-list">
-                    <p class="text-white mb-2 footer-list-title">Kategori Kelas</p>
+                    <h4 class="text-white mb-2 footer-list-title">Kategori Kelas</h4>
                     <ul class="list-unstyled">
                         <li><a href="#"><i class="mdi mdi-chevron-right mr-2"></i>Mechanical Design</a></li>
                         <li><a href="#"><i class="mdi mdi-chevron-right mr-2"></i>Architecture Design</a></li>
@@ -15,7 +15,7 @@
 
             <div class="col-lg-3">
                 <div class="footer-list">
-                    <p class="text-white mb-2 footer-list-title">Paket Eksklusif</p>
+                    <h4 class="text-white mb-2 footer-list-title">Paket Eksklusif</h4>
                     <ul class="list-unstyled">
                         <li><a href="#"><i class="mdi mdi-chevron-right mr-2"></i>Kelas Tatap Muka</a></li>
                         <li><a href="#"><i class="mdi mdi-chevron-right mr-2"></i>Expert</a></li>
@@ -26,7 +26,7 @@
 
             <div class="col-lg-3">
                 <div class="footer-list">
-                    <p class="text-white mb-2 footer-list-title">Kelas Terbaru</p>
+                    <h4 class="text-white mb-2 footer-list-title">Kelas Terbaru</h4>
                     <ul class="list-unstyled">
                         <li><a href="#"><i class="mdi mdi-chevron-right mr-2"></i>Facebook </a></li>
                         <li><a href="#"><i class="mdi mdi-chevron-right mr-2"></i>Twitter</a></li>
@@ -38,7 +38,7 @@
 
             <div class="col-lg-3">
                 <div class="footer-list">
-                    <p class="text-white mb-2 footer-list-title">Hubungi Kami</p>
+                    <h4 class="text-white mb-2 footer-list-title">Hubungi Kami</h4>
                     <ul class="list-unstyled">
                         <li><a href="#"><i class="mdi mdi-map-marker mr-2"></i>Jl. Ketintang, Kec. Gayungan, Surabaya</a></li>
                         <li><a href="#"><i class="mdi mdi-gmail mr-2"></i>3dexpert.cad@gmail.com</a></li>

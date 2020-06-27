@@ -61,6 +61,7 @@ class CourseController extends Controller
         $courses->harga_kelas = $request->get('harga_kelas');
         $courses->rating_kelas = $request->get('rating_kelas');
         $courses->level_kelas = $request->get('level_kelas');
+        $courses->kategori_kelas = $request->get('kategori_kelas');
         if ($request->hasFile('trailer')) {
             $trailer = $request->file('trailer');
             $trailer_name = date('dmyhs-') . Str::slug($request->get('nama_kelas'), '-') . '.' . $trailer->getClientOriginalExtension();
@@ -126,6 +127,7 @@ class CourseController extends Controller
         $courses->nama_pengajar = $request->get('nama_pengajar');
         $courses->harga_kelas = $request->get('harga_kelas');
         $courses->rating_kelas = $request->get('rating_kelas');
+        $courses->kategori_kelas = $request->get('kategori_kelas');
         $courses->level_kelas = $request->get('level_kelas');
         if ($request->hasFile('trailer')) {
             if ($courses->trailer && file_exists(public_path('gambar-trailer') . $courses->trailer)) {
