@@ -52,7 +52,7 @@
         <div class="row">
             @foreach ($materies as $materi)
             <div class="col-lg-3">
-                <div class="card shadow rounded-sm dropdown" style="border-radius: 10px !important; background: rgb(83, 83, 231)">
+                <div class="card shadow rounded-sm dropdown" style="border-radius: 10px !important; background: #3E4095">
                     <div class="card-img-top">
                         <img class="w-100"  style="border-radius: 10px !important" src="{{ asset('thumbnail-materi') .'/'  . $materi->thumbnail_materi }}" alt="">
                     </div>
@@ -203,57 +203,57 @@
                     </div>
 
 
-                    <div class="card">
-                        <div class="card-header bg-white" id="headingdua">
+                    <div class="card bg-transparent">
+                        <div class="card-header bg-transparent" id="headingdua">
                             <h4 class="text-left" type="button" data-toggle="collapse" data-target="#collapsedua" aria-expanded="true" aria-controls="collapsedua">
                                 <i class="fa fa-plus-circle"></i> Apa yang saya dapatkan jika mendaftar di 3D Expert.id?
                             </h4>
                         </div>
 
                         <div id="collapsedua" class="collapse" aria-labelledby="headingdua" data-parent="#accordionExample">
-                            <div class="card-body">
+                            <div class="card-body bg-white content-faq">
                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                             </div>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-header bg-white" id="headingtiga">
+                    <div class="card bg-transparent">
+                        <div class="card-header bg-transparent" id="headingtiga">
                             <h4 class="text-left" type="button" data-toggle="collapse" data-target="#collapsetiga" aria-expanded="true" aria-controls="collapsetiga">
                                 <i class="fa fa-plus-circle"></i> Bagaimana metode belajar di 3D Expert.id?
                             </h4>
                         </div>
 
                         <div id="collapsetiga" class="collapse" aria-labelledby="headingtiga" data-parent="#accordionExample">
-                            <div class="card-body">
+                            <div class="card-body bg-white content-faq">
                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                             </div>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-header bg-white" id="headingempat">
+                    <div class="card bg-transparent">
+                        <div class="card-header bg-transparent" id="headingempat">
                             <h4 class="text-left" type="button" data-toggle="collapse" data-target="#collapseempat" aria-expanded="true" aria-controls="collapseempat">
                                 <i class="fa fa-plus-circle"></i> Apakah 3D Expert.id membuka kelas offline?
                             </h4>
                         </div>
 
                         <div id="collapseempat" class="collapse" aria-labelledby="headingempat" data-parent="#accordionExample">
-                            <div class="card-body">
+                            <div class="card-body bg-white content-faq">
                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                             </div>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-header bg-white" id="headinglima">
+                    <div class="card bg-transparent">
+                        <div class="card-header bg-transparent" id="headinglima">
                             <h4 class="text-left" type="button" data-toggle="collapse" data-target="#collapselima" aria-expanded="true" aria-controls="collapselima">
                                 <i class="fa fa-plus-circle"></i>Bagaimana dengan jadwal belajarnya?
                             </h4>
                         </div>
 
                         <div id="collapselima" class="collapse" aria-labelledby="headinglima" data-parent="#accordionExample">
-                            <div class="card-body">
+                            <div class="card-body bg-white content-faq">
                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                             </div>
                         </div>

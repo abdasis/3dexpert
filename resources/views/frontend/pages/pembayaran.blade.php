@@ -59,20 +59,6 @@
                             <img src="https://www.bukalapak.com/images/desktop/benefits/jaminan.png" class="rounded mx-auto mt-0 d-block img-thumbnail" width="30px" alt="">
                         </div>
                     </div>
-                    <div class="card-body">
-                        <form action="#" method="post">
-                            @csrf
-                            <div class="form-group">
-                                <label for="">Dison</label>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                      <span class="input-group-text" id="basic-addon1"><i class="fa fa-percent"></i></span>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="Masukan Kode Promo" aria-label="Masukan Kode Promo" aria-describedby="basic-addon1">
-                                  </div>
-                            </div>
-                        </form>
-                    </div>
 
                     <div class="card-body" style="background: #f5f5f5">
                         <h5>Petunjuk Pembayaran</h5>

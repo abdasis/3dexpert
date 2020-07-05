@@ -11,7 +11,7 @@
     </div>
     <div class="row mb-100">
         @foreach ($courses as $course)
-            <div class="col-lg-12 " style="border-radius: 15px; border: 2px solid #28D6D7">
+            <div class="col-lg-12 mb-2 " style="border-radius: 15px; border: 2px solid #28D6D7">
                 <div class="row p-2">
                     <div class="col-md-6">
                         <h2 class="mb-2 text-expert "> {{ $course->nama_kelas }} </h2>
@@ -24,55 +24,38 @@
                         </h3>
                     </div>
                     <div class="col-md-4">
-                        <img class="w-100" src="{{ asset('thumbnail-kelas') .'/'  . $course->thumbnail }}" alt="">
+                        <img class="w-100 thumbnail-kelas-saya" height="200px" width="240px" src="{{ asset('thumbnail-kelas') .'/'  . $course->thumbnail }}" alt="">
                     </div>
                     <div class="col-md-8">
-                        <div class="row">
+                        <div class="row mb-2">
                             <div class="col-md-6">
-                                <div class="row">
+                                <div class="row mb-3">
                                     <div class="col-md-4">
-                                        <i class="mdi mdi-file-pdf font-28 text-center"></i>
+                                    <img class="w-100" src="{{ asset('frontend/assets/images/icons/pdf.png') }}" alt="">
                                     </div>
                                     <div class="col-md-8">
                                         <p>Ebook</p>
-                                        <p>Download PDF</p>
-
+                                        <p class="font-16 text-expert">Download PDF</p>
                                     </div>
                                 </div>
+                                <button class="btn-block btn btn-expert">Buka Kelas</button>
                             </div>
-                            <div class="col-md-6"></div>
+                            <div class="col-md-6">
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                    <img class="w-100 mb-2" src="{{ asset('frontend/assets/images/icons/portofolio.png') }}" alt="">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p>Kirim Portfolio</p>
+                                        <p class="font-16 text-expert">Upload Karya</p>
+                                    </div>
+                                </div>
+                                <button class="btn-block btn btn-expert">Cetak Sertifikat</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                {{-- <div class="card shadow rounded-sm p-2 dropdown">
-                    <div class="">
-                    </div>
-                    <div class="course-text dropdown-toggle"  type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="card-text">
-                            <h4 class="mb-2 "> {{ $course->nama_kelas }} </h4>
-                            <small class="text-muted">{{ $course->kategori_kelas }} </small>
-                        </div>
-                        <div class="card-text mt-2">
-                            <div class="badge bg-soft-info text-info p-1">
-                                1 Jam 53 Menit
-                            </div>
-                            <div class="badge bg-soft-info text-info p-1 float-right">
-                                <i class="fa fa-user-graduate mr-1 "></i>{{ $course->nama_pengajar }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dropdown-menu w-100" id="level-kelas" aria-labelledby="dropdownMenu2">
-                        <a href="{{ route('kelas.rincian', ['nama_kelas' => $course->nama_kelas, 'level_kelas' => 'Pemula']) }}">
-                            <button class="dropdown-item" type="button">Pemula</button>
-                        </a>
-                        <a href="{{ route('kelas.rincian', ['nama_kelas' => $course->nama_kelas, 'level_kelas' => 'Intermediate']) }}">
-                            <button class="dropdown-item" type="button">Intermediate</button>
-                        </a>
-                        <a href="{{ route('kelas.rincian', ['nama_kelas' => $course->nama_kelas, 'level_kelas' => 'Expert']) }}">
-                            <button class="dropdown-item" type="button">Expert</button>
-                        </a>
-                    </div>
-                </div> --}}
+
             </div>
         @endforeach
     </div>

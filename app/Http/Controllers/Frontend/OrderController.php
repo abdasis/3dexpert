@@ -43,22 +43,32 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+
         $kelas = Course::where('nama_kelas', $request->get('kelas'))->first();
-        $diorder = Order::where('status', 'BELUM')
-        ->where('user_id', Auth::user()->id)->first();
-        if (!empty($diorder)) {
-            alert()->warning('Maaf','Selesaikan dulu pembayaran sebelumnya');
+        $diorder = Order::leftJoin('course_order', 'course_order.order_id', '=', 'orders.id')
+        ->select('course_order.*')
+        ->where('course_id', $kelas->id)
+        ->where('user_id', Auth::user()->id)
+        ->get();
+
+
+        if ($diorder->count() > 0) {
+            alert()->warning('Maaf', 'Anda telah membeli kelas ini');
+            return redirect()->route('kelas');
+        }else {
+            $orderKelas = new Order();
+            $orderKelas->user_id = Auth::user()->id;
+            $orderKelas->total_price = $kelas->harga_kelas;
+            $orderKelas->invoice_number = rand(1, null) . date('ysmd');
+            $orderKelas->status = 'BELUM';
+            $orderKelas->save();
+            $couserOrder = Order::find($orderKelas->id);
+            $kelas->orders()->attach($couserOrder, ['quantity'=> '1']);
             return redirect()->route('order.invoice');
         }
-        $orderKelas = new Order();
-        $orderKelas->user_id = Auth::user()->id;
-        $orderKelas->total_price = $kelas->harga_kelas;
-        $orderKelas->invoice_number = rand(1, null) . date('ysmd');
-        $orderKelas->status = 'BELUM';
-        $orderKelas->save();
-        $couserOrder = Order::find($orderKelas->id);
-        $kelas->orders()->attach($couserOrder, ['quantity'=> '1']);
-        return redirect()->route('order.invoice');
+
+
+
     }
 
 
@@ -113,6 +123,7 @@ class OrderController extends Controller
         $user = User::find(Auth::user()->id);
         $order = Order::where('user_id', $user->id)
         ->where('status', 'BELUM')
+        ->orderBy('created_at', 'DESC')
         ->first();
         if (!empty($order)) {
             return view('frontend.pages.pembayaran')->withOrder($order);

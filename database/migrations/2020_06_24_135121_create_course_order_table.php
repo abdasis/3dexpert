@@ -15,8 +15,8 @@ class CreateCourseOrderTable extends Migration
     {
         Schema::create('course_order', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('order_id')->constrained();
-            $table->foreignId('course_id')->constrained();
+            $table->foreignId('order_id')->constrained()->onDelete('cascade');
+            $table->foreignId('course_id')->constrained()->onDelete('cascade');
             $table->integer('quantity');
             $table->timestamps();
         });

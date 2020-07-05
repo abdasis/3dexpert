@@ -838,3 +838,19 @@ img.img-circle.img-fluid.mx-auto.d-block.foto-peserta {
     width: 100%;
     object-fit: cover;
 }
+
+.thumbnail-kelas-saya {
+    object-fit: cover;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.tumbnail-gambar-kelas {
+    height: 190px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.thumbnail-kelas-saya:hover {
+    transform: scale(1.5);
+}

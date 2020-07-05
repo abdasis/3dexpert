@@ -46,6 +46,17 @@
                             <button class="btn btn-expert"> <i class="mdi mdi-cart"></i> Checkout</button>
                         </div>
                     </form>
+                    <div class="container px-3">
+                        <form action="" method="post">
+                            @csrf
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Masukan Kode Promo" aria-label="Masukan Kode Promo">
+                                <div class="input-group-append">
+                                    <button class="btn btn-dark waves-effect waves-light" type="button"><i class="fa fa-money-bill mr-1"></i>Cek Kode</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

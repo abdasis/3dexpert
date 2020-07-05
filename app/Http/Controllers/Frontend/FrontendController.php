@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\Materi;
 use App\Models\Order;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -50,24 +51,30 @@ class FrontendController extends Controller
 
     public function profile()
     {
-        $order = Order::where('user_id', Auth::user()->id)->first();
-        $kelas = $order->courses;
-        if (empty($kelas)) {
+        $courses = Order::where('user_id', Auth::user()->id)
+        ->join('course_order', 'course_order.order_id', '=', 'orders.id')
+        ->leftJoin('courses', 'courses.id', '=', 'course_order.course_id')
+        ->get();
+        if ($courses->count() < 1) {
             alert()->warning('Maaf!!!', 'Belum ada kelas yang dibeli');
             return redirect()->route('kelas');
         }
-        return view('frontend.pages.kelas-saya')->withCourses($kelas);
+        return view('frontend.pages.profile')->withCourses($courses);
     }
 
     public function kelasSaya()
     {
-        $order = Order::where('user_id', Auth::user()->id)->first();
-        $kelas = $order->courses;
-        if (empty($kelas)) {
+
+        $courses = Order::where('user_id', Auth::user()->id)
+        ->join('course_order', 'course_order.order_id', '=', 'orders.id')
+        ->leftJoin('courses', 'courses.id', '=', 'course_order.course_id')
+        ->get();
+
+        if (empty($courses)) {
             alert()->warning('Maaf!!!', 'Belum ada kelas yang dibeli');
             return redirect()->route('kelas');
         }
-        return view('frontend.pages.kelas-saya')->withCourses($kelas);
+        return view('frontend.pages.kelas-saya')->withCourses($courses);
 
 
     }
