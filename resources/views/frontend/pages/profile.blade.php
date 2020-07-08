@@ -68,10 +68,9 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="text-center mb-4 pb-1">
-                    <h3 class="mb-3">KURSUS TERBARU</h3>
-                    <p class="text-muted">Dapatkan kursus-kursus terbaru dari kami</p>
+            <div class="col-lg-12">
+                <div class="text-left mb-4 pb-1">
+                    <h2 class="mb-3 text-expert">Kelas Saya</h2>
                 </div>
             </div>
         </div>
@@ -93,6 +92,7 @@
                             <img class="w-100 thumbnail-kelas-saya" height="200px" width="240px" src="{{ asset('thumbnail-kelas') .'/'  . $course->thumbnail }}" alt="">
                         </div>
                         <div class="col-md-8">
+                            <p class="font-20 text-white">20 Video Pembelajaran ( 3 jam 16 menit )</p>
                             <div class="row mb-2">
                                 <div class="col-md-6">
                                     <div class="row mb-3">
@@ -100,11 +100,15 @@
                                         <img class="w-100" src="{{ asset('frontend/assets/images/icons/pdf.png') }}" alt="">
                                         </div>
                                         <div class="col-md-8">
-                                            <p>Ebook</p>
-                                            <p class="font-16 text-expert">Download PDF</p>
+                                            <p class="font-16 font-weight-bold">Ebook</p>
+                                            <p class="font-16 text-expert font-weight-bold">Download PDF</p>
                                         </div>
                                     </div>
-                                    <button class="btn-block btn btn-expert">Buka Kelas</button>
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-7">
+                                            <button class="btn-block btn btn-expert text-black font-20 font-weight-bold" style="border-radius: 14px">Buka Kelas</button>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="row mb-3">
@@ -112,11 +116,15 @@
                                         <img class="w-100 mb-2" src="{{ asset('frontend/assets/images/icons/portofolio.png') }}" alt="">
                                         </div>
                                         <div class="col-md-8">
-                                            <p>Kirim Portfolio</p>
-                                            <p class="font-16 text-expert">Upload Karya</p>
+                                            <p class="font-16 font-weight-bold">Kirim Portfolio</p>
+                                            <p class="font-16 text-expert font-weight-bold">Upload Karya</p>
                                         </div>
                                     </div>
-                                    <button class="btn-block btn btn-expert">Cetak Sertifikat</button>
+                                    <div class="row justify-content-center" >
+                                        <div class="col-md-7" style="margin-top: 2px">
+                                            <button class="btn-block btn btn-expert text-black font-20 font-weight-bold" style="border-radius: 14px">Cetak Sertifikat</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

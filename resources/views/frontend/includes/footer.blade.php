@@ -5,10 +5,10 @@
                 <div class="footer-list">
                     <h4 class="text-white mb-2 footer-list-title">Kategori Kelas</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#"><i class="mdi mdi-chevron-right mr-2"></i>Mechanical Design</a></li>
-                        <li><a href="#"><i class="mdi mdi-chevron-right mr-2"></i>Architecture Design</a></li>
-                        <li><a href="#"><i class="mdi mdi-chevron-right mr-2"></i>Rendering And Animation</a></li>
-                        <li><a href="#"><i class="mdi mdi-chevron-right mr-2"></i>Rencana Anggaran Biaya</a></li>
+                        <li><a href="{{ route('kelas') }}"><i class="mdi mdi-chevron-right mr-2"></i>Mechanical Design</a></li>
+                        <li><a href="{{ route('kelas') }}"><i class="mdi mdi-chevron-right mr-2"></i>Architecture Design</a></li>
+                        <li><a href="{{ route('kelas') }}"><i class="mdi mdi-chevron-right mr-2"></i>Rendering And Animation</a></li>
+                        <li><a href="{{ route('kelas') }}"><i class="mdi mdi-chevron-right mr-2"></i>Rencana Anggaran Biaya</a></li>
                     </ul>
                 </div>
             </div>

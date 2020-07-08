@@ -762,11 +762,18 @@ h4.widget-title {
 
 #level-kelas {
     border-top: 4px solid #85fef9;
+    margin-top: -15px;
 }
 
 .logo-kampus:hover {
     opacity: .5;
     cursor: pointer;
+}
+
+.logo-kampus {
+    object-fit: scale-down;
+    height: 80px;
+    width: 80px;
 }
 
 img.img-circle.img-fluid.mx-auto.d-block.foto-peserta {
@@ -831,6 +838,8 @@ img.img-circle.img-fluid.mx-auto.d-block.foto-peserta {
     border: 1px solid #f7f7f7;
     margin-left: 40px;
     font-size: 16px;
+    font-weight: bold;
+    color: #1B2E75;
 }
 
 .img-banner {
@@ -853,4 +862,42 @@ img.img-circle.img-fluid.mx-auto.d-block.foto-peserta {
 
 .thumbnail-kelas-saya:hover {
     transform: scale(1.5);
+}
+
+.faq-title {
+    font-size: 25;
+    font-weight: bold;
+    color: #1B2E75;
+}
+
+.header-faq {
+    padding: 0px;
+}
+
+.rounded-14 {
+    border-radius: 14px;
+}
+
+.rounded-top-right-14 {
+    border-top-right-radius: 14px;
+}
+
+.rounded-top-left-14 {
+    border-top-left-radius: 14px;
+}
+
+.dropdown-box {
+    background: #00A859;
+    border: none !important;
+}
+
+.dropdown-box a {
+    background: #fff;
+    border-radius: 14px;
+    padding: 10px;
+    display: block;
+    margin: 10px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1B2E75;
 }
