@@ -901,3 +901,7 @@ img.img-circle.img-fluid.mx-auto.d-block.foto-peserta {
     font-weight: bold;
     color: #1B2E75;
 }
+
+.img-fit {
+    object-fit: scale-down;
+}

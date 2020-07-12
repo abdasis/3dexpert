@@ -57,6 +57,11 @@
                                             <span class="btn-label"><i class="mdi mdi-plus"></i></span>Materi
                                         </button>
                                     </a>
+                                    <a class="text-center" href="{{ route('testimoni.create', $course->nama_kelas) }}">
+                                        <button type="button" class="btn btn-danger waves-effect waves-light btn-sm">
+                                            <span class="btn-label"><i class="mdi mdi-plus"></i></span>Testimoni
+                                        </button>
+                                    </a>
                                 </td>
                             </tr>
                             @endforeach

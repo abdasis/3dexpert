@@ -22,6 +22,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('materi/{nama_kelas}', 'Backend\MateriController@create')->name('materi.create');
     Route::post('materi', 'Backend\MateriController@store')->name('materi.store');
     Route::resource('orders', 'Backend\OrderController', ['as' => 'admin']);
+    Route::resource('clients', 'Backend\KlienController');
+    Route::get('testimoni/{nama_kelas}', 'Backend\TestimoniController@create')->name('testimoni.create');
+    Route::resource('testimoni', 'Backend\TestimoniController')->except(['create']);
 });
 
 
@@ -44,3 +47,8 @@ Auth::routes([
     'register' => false,
 ]);
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect('/');
+});

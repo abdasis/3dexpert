@@ -20,6 +20,12 @@
                                 Edit Profile
                             </button>
                         </a>
+
+                        <a href="{{ route('logout') }}">
+                            <button class="btn btn-danger btn-block">
+                                Logout
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>

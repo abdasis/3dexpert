@@ -87,6 +87,25 @@
                 </li>
 
                 <li>
+                    <a href="#klien" data-toggle="collapse">
+                        <i class="mdi mdi-account"></i>
+                        <span> Klien </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="klien">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('clients.create') }}">Tambah Klien</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('clients.index') }}">Daftar Klien</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
                     <a href="#sidebarCrm" data-toggle="collapse">
                         <i class="mdi mdi-bank-transfer"></i>
                         <span> Pembayaran </span>

@@ -21,4 +21,9 @@ class Course extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function testimonis()
+    {
+        return $this->hasMany(Testimoni::class);
+    }
 }

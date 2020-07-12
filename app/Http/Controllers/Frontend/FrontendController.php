@@ -32,15 +32,18 @@ class FrontendController extends Controller
 
     public function rincianKelas(Request $request)
     {
-        // $statusOrder = Order::where('status', 'AKTIF')->where('user_id', Auth::user()->id)->first();
         $nama_kelas  = $request->get('nama_kelas');
         $level_kelas = $request->get('level_kelas');
         $course = Course::where('nama_kelas', $nama_kelas)->where('level_kelas', $level_kelas)->first();
+        $cekOrder = Order::where('user_id', Auth::user()->id)
+                    ->join('course_order', 'course_order.order_id', '=', 'orders.id')
+                    ->where('course_id', $course->id)
+                    ->first();
         if (empty($course)) {
             abort(404, 'Tidak ada kelas yang tersedia');
         }else{
             $materis = $course->materis;
-            return view('frontend.pages.rincian-kelas')->withCourse($course)->withMateris($materis);
+            return view('frontend.pages.rincian-kelas')->withCourse($course)->withMateris($materis)->withcekOrder($cekOrder);
         }
     }
 

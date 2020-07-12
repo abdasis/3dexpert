@@ -84,38 +84,11 @@
         <!-- end row -->
 
         <div class="row justify-content-center">
+            @foreach (App\Models\Klien::all() as $client)
             <div class="col-md-1 mb-2">
-                <img src="{{ asset('frontend/assets/logo-kampus/ITATS.png') }}" class="logo-kampus" alt="" srcset="" width="80px">
+                <img src="{{ asset('logo-kampus') . '/' . $client->logo_kampus }}" class="logo-kampus" alt="" srcset="" width="80px">
             </div>
-
-            <div class="col-md-1 mb-2">
-                <img src="{{ asset('frontend/assets/logo-kampus/NAROTAMA.png') }}" class="logo-kampus" alt="" srcset="" width="80px">
-            </div>
-
-            <div class="col-md-1 mb-2">
-                <img src="{{ asset('frontend/assets/logo-kampus/PENS.png') }}" class="logo-kampus" alt="" srcset="" width="80px">
-            </div>
-
-            <div class="col-md-1 mb-2">
-                <img src="{{ asset('frontend/assets/logo-kampus/UHT.png') }}" class="logo-kampus" alt="" srcset="" width="80px">
-            </div>
-
-            <div class="col-md-1 mb-2">
-                <img src="{{ asset('frontend/assets/logo-kampus/UINSA.png') }}" class="logo-kampus" alt="" srcset="" width="80px">
-            </div>
-
-            <div class="col-md-1 mb-2">
-                <img src="{{ asset('frontend/assets/logo-kampus/UM.png') }}" class="logo-kampus" alt="" srcset="" width="80px">
-            </div>
-
-            <div class="col-md-1 mb-2">
-                <img src="{{ asset('frontend/assets/logo-kampus/ITATS.png') }}" class="logo-kampus" alt="" srcset="" width="80px">
-            </div>
-
-            <div class="col-md-1 mb-2">
-                <img src="{{ asset('frontend/assets/logo-kampus/ITATS.png') }}" class="logo-kampus" alt="" srcset="" width="80px">
-            </div>
-
+            @endforeach
         </div>
         <!-- end row -->
 
@@ -144,23 +117,25 @@
         </div>
         <!-- end row -->
         <div class="row">
-            <div class="col-lg-4">
-                <div class="testi-box mt-4">
-                    <div class="card">
-                        <div class="card-img-top">
-                            <img src="{{ asset('/frontend/assets/images/peserta/ADINDA.png') }}" class="img-circle img-fluid mx-auto d-block foto-peserta" width="80px" alt="">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="text-center">Adinda</h4>
-                            <p class="text-center text-primary">Universitas Trunojoyo Madura</p>
-                            <div class="card-text text-center">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quod id doloribus veritatis
+        @foreach (App\Models\Testimoni::orderBy('created_at', 'DESC')->paginate(3) as $testimoni)
+        <div class="col-lg-4">
+            <div class="testi-box mt-4">
+                <div class="card">
+                    <div class="card-img-top">
+                        <img src="{{ asset('foto-peserta') . '/' . $testimoni->foto_peserta }}" class="img-circle img-fluid mx-auto d-block foto-peserta" width="80px" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="text-center">{{ $testimoni->nama_peserta }}</h4>
+                        <p class="text-center text-primary">{{ $testimoni->nama_kampus }}</p>
+                        <div class="card-text text-center">
+                           {{ $testimoni->isi_testimoni }}
 
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        @endforeach
             <!-- end col -->
 
         </div>

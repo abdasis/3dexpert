@@ -12,6 +12,7 @@
                 </div>
             </div>
         </div>
+        @if (empty($cekOrder))
         <div class="col-md-4">
             <h3 class="nama-kelas text-expert">{{ $course->nama_kelas }}</h3>
             <p class="font-16 text-white">20 Video Pembelajaran (3 Jam 40 Menit)</p>
@@ -27,16 +28,54 @@
             <a href="{{ Auth::check() ? route('order.create', ['kelas' => $course->nama_kelas, 'token' => csrf_token()]) : route('login') }}" target="{{ !Auth::check() ? 'blank' : '' }}">
                 <button class="btn btn-danger btn-block py-2" style="background: #E80C27; border-radius: 15px">Beli Sekarang</button>
             </a>
-            {{-- @if ($status === null)
-            <a href="{{ Auth::check() ? route('order.create', ['kelas' => $course->nama_kelas, 'token' => csrf_token()]) : route('login') }}">
-                <button class="btn btn-danger btn-block">Beli Sekarang</button>
-            </a>
-            @else
-            <a href="{{ Auth::check() ? route('order.create', ['kelas' => $course->nama_kelas, 'token' => csrf_token()]) : route('login') }}">
-                <button class="btn btn-danger btn-block">Putar Course</button>
-            </a>
-            @endif --}}
         </div>
+        @else
+        <div class="col-md-4">
+           <div class="container mt-2 mb-1">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                        <img class="w-100 img-fit" height="80" src="{{ asset('frontend/assets/images/icons/pdf.png') }}" alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <p class="font-16 font-weight-bold">Ebook</p>
+                            <p class="font-16 text-expert font-weight-bold">Download PDF</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                        <img class="w-100 img-fit" height="80" src="{{ asset('icons/portofolio-logo.png') }}" alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <p class="font-16 font-weight-bold">Kirm Portofolio</p>
+                            <p class="font-16 text-expert font-weight-bold">Upload Karya</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                        <img class="w-100 img-fit" height="80" src="{{ asset('icons/portofolio-logo.png') }}" alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <p class="font-16 font-weight-bold">Video Pembelajaran</p>
+                            <p class="font-16 text-expert font-weight-bold">Download Video Ini</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           </div>
+        </div>
+        @endif
     </div>
 
     <div class="row">
