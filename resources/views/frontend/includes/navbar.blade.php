@@ -21,11 +21,11 @@
                     <b><a href="{{ route('kelas-saya') }}" class="nav-link">Kelas Saya</a></b>
                 </li>
                 <li class="nav-item">
-                    <b>                    <a href="#pricing" class="nav-link">Transaksi</a>
+                    <b><a href="{{ route('order.invoice') }}" class="nav-link">Transaksi</a>
                     </b>
                 </li>
                 <li class="nav-item">
-                    <b>                    <a href="{{ route('profile') }}" class="nav-link"> <i class="fa fa-user-circle"></i> Profil</a>
+                    <b><a href="{{ route('profile') }}" class="nav-link"> <i class="fa fa-user-circle"></i> Profil</a>
                     </b>
                 </li>
             </ul>

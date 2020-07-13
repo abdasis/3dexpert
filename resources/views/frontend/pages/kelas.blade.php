@@ -83,7 +83,7 @@
                 <div class="card-body">
                     <div class="course-text dropdown-toggle"  type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="card-text">
-                            <h4 class="mb-2 text-white"> Mechanical Design </h4>
+                            <h4 class="mb-2 text-white"> Rencana Anggaran Biaya </h4>
                         </div>
                     </div>
                     <div class="dropdown-menu w-100 dropdown-box"  id="level-kelas" aria-labelledby="dropdownMenu2">
