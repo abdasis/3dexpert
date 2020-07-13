@@ -30,15 +30,17 @@ class FrontendController extends Controller
         ]);
     }
 
-    public function rincianKelas(Request $request)
+    public function rincianKelas($kelas, $level = null)
     {
-        $nama_kelas  = $request->get('nama_kelas');
-        $level_kelas = $request->get('level_kelas');
-        $course = Course::where('nama_kelas', $nama_kelas)->where('level_kelas', $level_kelas)->first();
-        $cekOrder = Order::where('user_id', Auth::user()->id)
+        $course = Course::where('nama_kelas', $kelas)->first();
+        if (Auth::user()) {
+            $cekOrder = Order::where('user_id', Auth::user()->id)
                     ->join('course_order', 'course_order.order_id', '=', 'orders.id')
                     ->where('course_id', $course->id)
                     ->first();
+        }else{
+            $cekOrder = Course::where('nama_kelas', $kelas)->where('level_kelas', $level)->first();
+        }
         if (empty($course)) {
             abort(404, 'Tidak ada kelas yang tersedia');
         }else{
@@ -82,10 +84,28 @@ class FrontendController extends Controller
 
     }
 
-    public function tentang(Request $request)
+    public function tentang($kelas)
     {
-        $nama_kelas = $request->get('kelas');
-        $kelas = Course::where('nama_kelas', $nama_kelas)->first();
+
+        $kelas = Course::where('nama_kelas', $kelas)->first();
         return view('frontend.pages.tentang-kelas')->withKelas($kelas);
+    }
+
+    public function playVideo($kelas, $materi = null)
+    {
+
+
+        if ($materi == null) {
+            $course = Course::where('nama_kelas', $kelas)->first();
+            $materis = $course->materis;
+            return view('frontend.pages.play-video')->withMateris($materis)->withCourse($course);
+
+        }else{
+            $course = Course::where('nama_kelas', $kelas)->first();
+            $diputar = Materi::where('course_id', $course->id)->where('judul_materi', $materi)->first();
+            $materis = $course->materis;
+            return view('frontend.pages.play-video')->withMateris($materis)->withCourse($course)->withPutar($diputar);
+        }
+
     }
 }

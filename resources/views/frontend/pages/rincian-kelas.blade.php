@@ -12,7 +12,74 @@
                 </div>
             </div>
         </div>
-        @if (empty($cekOrder))
+        @auth
+            @if (empty($cekOrder))
+            <div class="col-md-4">
+                <h3 class="nama-kelas text-expert">{{ $course->nama_kelas }}</h3>
+                <p class="font-16 text-white">20 Video Pembelajaran (3 Jam 40 Menit)</p>
+                <p class="font-18 text-white"><b>Rating</b></p>
+                <p>
+                    @foreach (range(1, $course->rating_kelas) as $rating)
+                        <i class="fa fa-star text-warning"></i>
+                    @endforeach
+                </p>
+                <h4 class="harga-asli text-expert"><strike>Rp. {{ number_format($course->harga_kelas+190000, 2, ',', '.') }}/Kelas</strike></h4>
+                <h3 class="harga-diskon text-expert text-white">Rp. {{ number_format($course->harga_kelas, 2, ',','.') }}</h3>
+                <p class="font-16 text-white">( 20 Chapter + Ebook )</p>
+                <a href="{{ Auth::check() ? route('order.create', ['kelas' => $course->nama_kelas, 'token' => csrf_token()]) : route('login') }}" target="{{ !Auth::check() ? 'blank' : '' }}">
+                    <button class="btn btn-danger btn-block py-2" style="background: #E80C27; border-radius: 15px">Beli Sekarang</button>
+                </a>
+            </div>
+            @else
+            <div class="col-md-4">
+                <div class="container mt-2 mb-1">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                <img class="w-100 img-fit" height="80" src="{{ asset('frontend/assets/images/icons/pdf.png') }}" alt="">
+                                </div>
+                                <div class="col-md-8">
+                                    <p class="font-16 font-weight-bold">Ebook</p>
+                                    <p class="font-16 text-expert font-weight-bold">Download PDF</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                <img class="w-100 img-fit" height="80" src="{{ asset('icons/portofolio-logo.png') }}" alt="">
+                                </div>
+                                <div class="col-md-8">
+                                    <p class="font-16 font-weight-bold">Kirm Portofolio</p>
+                                    <p class="font-16 text-expert font-weight-bold">Upload Karya</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                <img class="w-100 img-fit" height="80" src="{{ asset('icons/portofolio-logo.png') }}" alt="">
+                                </div>
+                                <div class="col-md-8">
+                                    <p class="font-16 font-weight-bold">Video Pembelajaran</p>
+                                    <p class="font-16 text-expert font-weight-bold">Download Video Ini</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endif
+        @endauth
+
+        @guest
         <div class="col-md-4">
             <h3 class="nama-kelas text-expert">{{ $course->nama_kelas }}</h3>
             <p class="font-16 text-white">20 Video Pembelajaran (3 Jam 40 Menit)</p>
@@ -29,53 +96,7 @@
                 <button class="btn btn-danger btn-block py-2" style="background: #E80C27; border-radius: 15px">Beli Sekarang</button>
             </a>
         </div>
-        @else
-        <div class="col-md-4">
-           <div class="container mt-2 mb-1">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row mb-3">
-                        <div class="col-md-4">
-                        <img class="w-100 img-fit" height="80" src="{{ asset('frontend/assets/images/icons/pdf.png') }}" alt="">
-                        </div>
-                        <div class="col-md-8">
-                            <p class="font-16 font-weight-bold">Ebook</p>
-                            <p class="font-16 text-expert font-weight-bold">Download PDF</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row mb-3">
-                        <div class="col-md-4">
-                        <img class="w-100 img-fit" height="80" src="{{ asset('icons/portofolio-logo.png') }}" alt="">
-                        </div>
-                        <div class="col-md-8">
-                            <p class="font-16 font-weight-bold">Kirm Portofolio</p>
-                            <p class="font-16 text-expert font-weight-bold">Upload Karya</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row mb-3">
-                        <div class="col-md-4">
-                        <img class="w-100 img-fit" height="80" src="{{ asset('icons/portofolio-logo.png') }}" alt="">
-                        </div>
-                        <div class="col-md-8">
-                            <p class="font-16 font-weight-bold">Video Pembelajaran</p>
-                            <p class="font-16 text-expert font-weight-bold">Download Video Ini</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-           </div>
-        </div>
-        @endif
+        @endguest
     </div>
 
     <div class="row">
@@ -88,7 +109,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            @foreach ($materis as $materi)
+        @foreach ($materis as $materi)
             <div class="accordion b-radius mb-2" id="accordion{{ $materi->id }}" >
                 <div class="card-silabus bg-black border-expert b-radius ">
                     <div class="card-header bg-black b-radius" id="heading{{ $materi->id }}">
@@ -96,15 +117,14 @@
                             <i class="fa fa-plus-circle"></i> {{ $materi->judul_materi }}
                         </h4>
                     </div>
-
                     <div id="collapse{{ $materi->id }}" class="collapse text-white" aria-labelledby="heading{{ $materi->id }}" data-parent="#accordion{{ $materi->id }}">
                         <div class="card-body">
                             {!! $materi->diskripsi_materi !!}
+
                         </div>
                     </div>
                 </div>
             </div>
-
             @endforeach
             <div class="mt-5">
                 <a href="https://facebook.com">

@@ -31,7 +31,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
 Route::get('/', 'Frontend\FrontendController@index');
 Route::get('kategori-kelas', 'Frontend\FrontendController@kelas')->name('kelas');
-Route::get('/kelas', 'Frontend\FrontendController@rincianKelas')->name('kelas.rincian');
+
+Route::get('/kelas/{kelas}/{level?}', 'Frontend\FrontendController@rincianKelas')->name('kelas.rincian');
+Route::get('{kelas}/video/{materi?}', 'Frontend\FrontendController@playVideo')->name('kelas.video');
+
 Route::get('/pembayaran', 'Frontend\FrontendController@pembayaran')->name('pembayaran');
 Route::get('profil', 'Frontend\FrontendController@profile')->name('profile')->middleware('auth');
 Route::get('profil/{user}', 'Frontend\UserController@edit')->name('profile.edit')->middleware('auth');
@@ -42,7 +45,7 @@ Route::get('invoice', 'Frontend\OrderController@invoice')->name('order.invoice')
 Route::get('daftar', 'Frontend\UserController@create')->name('user.daftar');
 Route::post('daftar', 'Frontend\UserController@store')->name('user.store');
 Route::get('kelas-saya', 'Frontend\FrontendController@kelasSaya')->name('kelas-saya')->middleware('auth');
-Route::get('tentang-kelas', 'Frontend\FrontendController@tentang')->name('kelas.tentang-kelas');
+Route::get('tentang-kelas/{kelas}', 'Frontend\FrontendController@tentang')->name('kelas.tentang-kelas');
 Auth::routes([
     'register' => false,
 ]);

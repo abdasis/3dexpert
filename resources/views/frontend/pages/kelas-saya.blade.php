@@ -41,7 +41,9 @@
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-md-7">
-                                        <button class="btn-block btn btn-expert text-black font-20 font-weight-bold" style="border-radius: 14px">Buka Kelas</button>
+                                        <a href="{{ route('kelas.video', ['kelas' => $course->nama_kelas]) }}">
+                                            <button class="btn-block btn btn-expert text-black font-20 font-weight-bold" style="border-radius: 14px">Buka Kelas</button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

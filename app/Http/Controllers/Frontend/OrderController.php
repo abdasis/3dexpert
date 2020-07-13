@@ -46,10 +46,10 @@ class OrderController extends Controller
 
         $kelas = Course::where('nama_kelas', $request->get('kelas'))->first();
         $diorder = Order::leftJoin('course_order', 'course_order.order_id', '=', 'orders.id')
-        ->select('course_order.*')
-        ->where('course_id', $kelas->id)
-        ->where('user_id', Auth::user()->id)
-        ->get();
+                ->select('course_order.*')
+                ->where('course_id', $kelas->id)
+                ->where('user_id', Auth::user()->id)
+                ->get();
 
 
         if ($diorder->count() > 0) {
