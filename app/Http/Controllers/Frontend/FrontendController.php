@@ -93,13 +93,14 @@ class FrontendController extends Controller
 
     public function playVideo($kelas, $materi = null)
     {
-
-
         if ($materi == null) {
             $course = Course::where('nama_kelas', $kelas)->first();
+            $diputar = Materi::where('course_id', $course->id)->first();
             $materis = $course->materis;
-            return view('frontend.pages.play-video')->withMateris($materis)->withCourse($course);
-
+            return view('frontend.pages.play-video')
+                ->withMateris($materis)
+                ->withCourse($course)
+                ->withPutar($diputar);
         }else{
             $course = Course::where('nama_kelas', $kelas)->first();
             $diputar = Materi::where('course_id', $course->id)->where('judul_materi', $materi)->first();

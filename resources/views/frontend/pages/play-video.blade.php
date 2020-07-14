@@ -8,7 +8,7 @@
             <div class="container">
                 <h4 class="text-expert">Materi Kelas | {{ $course->nama_kelas }}</h4>
                 <div class="embed-responsive embed-responsive-21by9">
-                    <iframe class="embed-responsive-item" src="{{ asset('galeri-materi') . '/' . $putar->video_materi }}" allowfullscreen></iframe>
+                    <iframe class="embed-responsive-item" src="{{  asset('galeri-materi') . '/' . $putar->video_materi}}" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
