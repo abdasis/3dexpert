@@ -3,24 +3,30 @@
 
 @section('content')
 <div class="container-fluid mt-100 mb-100">
-    <div class="row">
-        <div class="col-md-10 border-white" >
-            <div class="container">
-                <h4 class="text-expert">Materi Kelas | {{ $course->nama_kelas }}</h4>
-                <div class="embed-responsive embed-responsive-21by9">
-                    <iframe class="embed-responsive-item" src="{{  asset('galeri-materi') . '/' . $putar->video_materi}}" allowfullscreen></iframe>
+    @if (empty($putar))
+        <h1>Belum ada materi yang diupload</h1>
+    @else
+    <div class="materi-box">
+        <div class="row">
+            <div class="col-md-10 border-white" >
+                <div class="container">
+                    <h4 class="text-expert">Materi Kelas | {{ $course->nama_kelas }}</h4>
+                    <div class="embed-responsive embed-responsive-21by9">
+                        <iframe class="embed-responsive-item" src="{{  asset('galeri-materi') . '/' . $putar->video_materi}}" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <p class="diskripsi-kelas">
-                {!! $putar->diskripsi_materi !!}
-            </p>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="diskripsi-kelas">
+                    {!! $putar->diskripsi_materi !!}
+                </p>
+            </div>
         </div>
     </div>
+    @endif
 
     <div class="row">
         <div class="col-md-12">
