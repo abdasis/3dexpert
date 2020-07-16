@@ -137,6 +137,7 @@
     <section class="testimoni mt-100">
         <div class="row justify-content-center">
             <div class="col-md-8">
+                @foreach ($testimonis as $testimoni)
                 <div class="testi-box mt-4">
                     <div class="card bg-black border-expert-50">
                         <div class="card-img-top">
@@ -152,6 +153,7 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </section>

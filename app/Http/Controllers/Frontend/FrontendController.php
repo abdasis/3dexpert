@@ -45,7 +45,9 @@ class FrontendController extends Controller
             abort(404, 'Tidak ada kelas yang tersedia');
         }else{
             $materis = $course->materis;
-            return view('frontend.pages.rincian-kelas')->withCourse($course)->withMateris($materis)->withcekOrder($cekOrder);
+            $testimoni = $course->testimonis;
+            dd($testimoni);
+            return view('frontend.pages.rincian-kelas')->withCourse($course)->withMateris($materis)->withcekOrder($cekOrder)->withTestimonis($testimoni);
         }
     }
 
