@@ -135,20 +135,19 @@
     </div>
 
     <section class="testimoni mt-100">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center slider-testi">
             <div class="col-md-8">
-                @foreach ($testimonis as $testimoni)
+                @foreach ($testimonis->take(1) as $testimoni)
                 <div class="testi-box mt-4">
                     <div class="card bg-black border-expert-50">
                         <div class="card-img-top">
-                            <img src="{{ asset('/frontend/assets/images/peserta/ADINDA.png') }}" class="img-circle img-fluid mx-auto d-block foto-peserta" width="80px" alt="">
+                            <img src="{{ asset('/foto-peserta') . '/' . $testimoni->foto_peserta}}" class="img-circle img-fluid mx-auto d-block foto-peserta" width="80px" alt="">
                         </div>
                         <div class="card-body">
-                            <h4 class="text-center text-white">Adinda</h4>
-                            <p class="text-center text-white">Universitas Trunojoyo Madura</p>
+                            <h4 class="text-center text-white">{{ $testimoni->nama_peserta }}</h4>
+                            <p class="text-center text-white">{{ $testimoni->nama_kampus }}</p>
                             <div class="card-text text-center text-white">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quod id doloribus veritatis
-
+                                {{ $testimoni->isi_testimoni }}
                             </div>
                         </div>
                     </div>

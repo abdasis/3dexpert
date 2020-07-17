@@ -49,9 +49,9 @@
         </div>
         <!-- end row -->
 
-        <div class="row">
+        <div class="slider-kursus">
             @foreach ($materies as $materi)
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <div class="card shadow rounded-sm dropdown" style="border-radius: 10px !important; background: #3E4095">
                     <div class="card-img-top">
                         <img class="w-100"  style="border-radius: 10px !important" src="{{ asset('thumbnail-materi') .'/'  . $materi->thumbnail_materi }}" alt="">
@@ -116,7 +116,7 @@
             </div>
         </div>
         <!-- end row -->
-        <div class="row">
+        <div class="row slider-testi">
         @foreach (App\Models\Testimoni::orderBy('created_at', 'DESC')->paginate(3) as $testimoni)
         <div class="col-lg-4">
             <div class="testi-box mt-4">

@@ -46,7 +46,6 @@ class FrontendController extends Controller
         }else{
             $materis = $course->materis;
             $testimoni = $course->testimonis;
-            dd($testimoni);
             return view('frontend.pages.rincian-kelas')->withCourse($course)->withMateris($materis)->withcekOrder($cekOrder)->withTestimonis($testimoni);
         }
     }

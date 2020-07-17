@@ -22,6 +22,9 @@
         <link rel="stylesheet" type="text/css" href="{{ url('/') }}/frontend/assets/css/style.css" />
         <link rel="stylesheet" type="text/css" href="{{ url('/') }}/frontend/assets/css/all.min.css" />
 
+        <link rel="stylesheet" type="text/css" href="{{ url('/') }}/frontend/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ url('/') }}/frontend/slick/slick-theme.css"/>
+
     </head>
 
     <body>
@@ -47,15 +50,21 @@
         <script src="{{ url('/') }}/frontend/assets/js/jquery.easing.min.js"></script>
         <script src="{{ url('/') }}/frontend/assets/js/scrollspy.min.js"></script>
         <script src="{{ url('/') }}/frontend/assets/js/all.min.js"></script>
-        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script type="text/javascript" src="{{ url('/') }}/frontend/slick/slick.min.js"></script>
 
         <script>
             $(document).ready(function(){
-                $('.kursus-terbaru').slick({
+                $('.slider-kursus').slick({
                     infinite: true,
                     slidesToShow: 3,
                     slidesToScroll: 3
                 });
+            });
+
+            $('.slider-testi').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 3
             });
         </script>
 
