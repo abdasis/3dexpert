@@ -116,7 +116,7 @@
             </div>
         </div>
         <!-- end row -->
-        <div class="row slider-testi">
+        <div class="slider-testi">
         @foreach (App\Models\Testimoni::orderBy('created_at', 'DESC')->paginate(3) as $testimoni)
         <div class="col-lg-4">
             <div class="testi-box mt-4">
