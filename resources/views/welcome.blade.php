@@ -16,7 +16,9 @@
                                 yang membantu kamu mendapat ilmu desain 3D dengan mudah
                                 dan fleksibel</p>
                             <div class="subscribe">
-                                <button class="btn btn-light btn-rounded">Daftar Sekarang</button>
+                                <a href="{{ route('user.daftar') }}">
+                                    <button class="btn btn-light btn-rounded">Daftar Sekarang</button>
+                                </a>
                             </div>
                         </div>
                     </div>
