@@ -28,7 +28,7 @@
 
     </head>
 
-    <body>
+    <body @yield('background')>
         @include('sweetalert::alert')
 
         <!--Navbar Start-->
