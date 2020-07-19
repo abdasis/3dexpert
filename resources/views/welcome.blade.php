@@ -91,7 +91,7 @@
 
         <div class="row justify-content-center">
             @foreach (App\Models\Klien::all() as $client)
-            <div class="col-md-1 mb-3">
+            <div class="col-md-1 mb-4">
                 <img src="{{ asset('logo-kampus') . '/' . $client->logo_kampus }}" class="logo-kampus" alt="" srcset="" width="80px">
             </div>
             @endforeach
