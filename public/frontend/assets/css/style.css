@@ -908,6 +908,7 @@ h4.widget-title {
 
 .slick-track {
     display: flex !important;
+    padding-top: 50px;
 }
 
 .slick-slide {
@@ -926,4 +927,9 @@ h4.widget-title {
 
 .garis-bawah {
     border-bottom: 3px solid #1B2E75;
+}
+
+img.img-circle.img-fluid.mx-auto.d-block.foto-peserta {
+    position: relative;
+    margin-top: -60px;
 }

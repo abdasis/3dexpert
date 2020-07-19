@@ -112,7 +112,7 @@
                     @foreach (App\Models\Testimoni::orderBy('created_at', 'DESC')->paginate(3) as $testimoni)
                         <div class="card slider-content  h-100 py-2" style="border-radius: 14px">
                             <div class="card-img-top">
-                                <img src="{{ asset('foto-peserta') . '/' . $testimoni->foto_peserta }}" class="img-circle img-fluid mx-auto d-block foto-peserta" width="90px" alt="">
+                                <img src="{{ asset('foto-peserta') . '/' . $testimoni->foto_peserta }}" class="img-circle img-fluid mx-auto d-block foto-peserta" width="100px" alt="">
                             </div>
                             <div class="card-body">
                                 <h4 class="text-center">{{ $testimoni->nama_peserta }}</h4>
