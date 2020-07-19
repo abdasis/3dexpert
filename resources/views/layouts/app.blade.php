@@ -15,7 +15,6 @@
         <link rel="stylesheet" href="{{ url('/') }}/frontend/assets/css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
-        @yield('css')
         <!--Material Icon -->
         <link rel="stylesheet" type="text/css" href="{{ url('/') }}/frontend/assets/css/materialdesignicons.min.css" />
 
@@ -25,6 +24,7 @@
 
         <link rel="stylesheet" type="text/css" href="{{ url('/') }}/frontend/slick/slick.css"/>
         <link rel="stylesheet" type="text/css" href="{{ url('/') }}/frontend/slick/slick-theme.css"/>
+        @yield('css')
 
     </head>
 
@@ -52,7 +52,6 @@
         <script src="{{ url('/') }}/frontend/assets/js/scrollspy.min.js"></script>
         <script src="{{ url('/') }}/frontend/assets/js/all.min.js"></script>
         <script type="text/javascript" src="{{ url('/') }}/frontend/slick/slick.min.js"></script>
-        @yield('js')
 
         <script>
             $(document).ready(function(){
@@ -72,6 +71,8 @@
 
         <!-- custom js -->
         <script src="{{ url('/') }}/frontend/assets/js/app.js"></script>
+        @yield('js')
+
     </body>
 
 </html>
