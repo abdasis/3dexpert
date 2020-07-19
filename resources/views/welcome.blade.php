@@ -104,6 +104,13 @@
 <!-- testimonial start -->
 <section class="section bg-gradient">
     <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title text-center mb-3">
+                    <h3>TESTIMONI</h3>
+                </div>
+            </div>
+        </div>
         <!-- end row -->
         <div class="row">
             <div class="col-12">
