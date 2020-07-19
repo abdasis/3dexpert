@@ -49,9 +49,9 @@
         </div>
         <!-- end row -->
 
-        <div class="slider-kursus">
+        <div class="row justify-content-center">
             @foreach ($materies as $materi)
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="card shadow rounded-sm dropdown" style="border-radius: 10px !important; background: #3E4095">
                     <div class="card-img-top">
                         <img class="w-100"  style="border-radius: 10px !important" src="{{ asset('thumbnail-materi') .'/'  . $materi->thumbnail_materi }}" alt="">
@@ -111,9 +111,9 @@
         @foreach (App\Models\Testimoni::orderBy('created_at', 'DESC')->paginate(3) as $testimoni)
         <div class="col-lg-4">
             <div class="testi-box mt-4">
-                <div class="card">
+                <div class="card py-2" style="border-radius: 14px">
                     <div class="card-img-top">
-                        <img src="{{ asset('foto-peserta') . '/' . $testimoni->foto_peserta }}" class="img-circle img-fluid mx-auto d-block foto-peserta" width="80px" alt="">
+                        <img src="{{ asset('foto-peserta') . '/' . $testimoni->foto_peserta }}" class="img-circle img-fluid mx-auto d-block foto-peserta" width="90px" alt="">
                     </div>
                     <div class="card-body">
                         <h4 class="text-center">{{ $testimoni->nama_peserta }}</h4>
