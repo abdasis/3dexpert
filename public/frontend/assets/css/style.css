@@ -919,3 +919,11 @@ h4.widget-title {
     background-color: transparent;
     border-color: #44f1ec
 }
+
+.text-dark-blue {
+    color: #1B2E75;
+}
+
+.garis-bawah {
+    border-bottom: 3px solid #1B2E75;
+}

@@ -9,10 +9,14 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="home-title mo-mb-20">
-                            <h1 class="mb-4 text-black font-weight-bolder">Dunia Terus Berkembang
+                            <h1 class="mb-4 text-dark-blue font-weight-bolder">Dunia Terus Berkembang <br>
                                 Ayo Bergabung Bersama Kami
-                                dan Menjadi Desainer Hebat !</h1>
-                            <p class="mb-5 text-dark font-weight-semibold">3D Expert.id merupakan sebuah platform kelas desain 3D online
+                                dan Menjadi Desainer Hebat!
+                            </h1>
+
+                            <hr class="garis-bawah">
+
+                            <p class="mb-5 text-dark-blue font-weight-semibold">3D Expert.id merupakan sebuah platform kelas desain 3D online
                                 yang membantu kamu mendapat ilmu desain 3D dengan mudah
                                 dan fleksibel</p>
                             <div class="subscribe">
