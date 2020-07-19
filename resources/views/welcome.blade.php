@@ -98,31 +98,30 @@
 <!-- available demos end -->
 
 <!-- testimonial start -->
-<section class="section bg-gradient" id="clients">
+<section class="section bg-gradient">
     <div class="container-fluid">
         <!-- end row -->
-        <div class="slider-testi">
-        @foreach (App\Models\Testimoni::orderBy('created_at', 'DESC')->paginate(3) as $testimoni)
-            <div class="col-md-12">
-                <div class="card-deck">
-                    <div class="card py-2" style="border-radius: 14px">
-                        <div class="card-img-top">
-                            <img src="{{ asset('foto-peserta') . '/' . $testimoni->foto_peserta }}" class="img-circle img-fluid mx-auto d-block foto-peserta" width="90px" alt="">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="text-center">{{ $testimoni->nama_peserta }}</h4>
-                            <p class="text-center text-primary">{{ $testimoni->nama_kampus }}</p>
-                            <div class="card-text text-center">
-                               {{ $testimoni->isi_testimoni }}
+        <div class="row">
+            <div class="col-12">
+                <div class="card-deck slider-testi">
+                    @foreach (App\Models\Testimoni::orderBy('created_at', 'DESC')->paginate(3) as $testimoni)
+                        <div class="card py-2" style="border-radius: 14px">
+                            <div class="card-img-top">
+                                <img src="{{ asset('foto-peserta') . '/' . $testimoni->foto_peserta }}" class="img-circle img-fluid mx-auto d-block foto-peserta" width="90px" alt="">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="text-center">{{ $testimoni->nama_peserta }}</h4>
+                                <p class="text-center text-primary">{{ $testimoni->nama_kampus }}</p>
+                                <div class="card-text text-center">
+                                {{ $testimoni->isi_testimoni }}
 
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
-        @endforeach
             <!-- end col -->
-
         </div>
         <!-- end row -->
     </div>
