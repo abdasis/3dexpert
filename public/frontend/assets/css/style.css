@@ -913,3 +913,9 @@ h4.widget-title {
 .slick-slide {
     height: inherit !important;
 }
+
+.btn-outline-expert {
+    color: #44f1ec;
+    background-color: transparent;
+    border-color: #44f1ec
+}

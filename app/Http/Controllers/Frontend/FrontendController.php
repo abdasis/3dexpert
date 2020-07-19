@@ -32,7 +32,7 @@ class FrontendController extends Controller
 
     public function rincianKelas($kelas, $level = null)
     {
-        $course = Course::where('nama_kelas', $kelas)->first();
+        $course = Course::where('nama_kelas', $kelas)->where('level_kelas', $level)->first();
         if (Auth::user()) {
             $cekOrder = Order::where('user_id', Auth::user()->id)
                     ->join('course_order', 'course_order.order_id', '=', 'orders.id')

@@ -19,13 +19,13 @@
             <div class="col-md-4">
                 <h1 class="text-center text-expert">Pilih Kelas Mu</h1>
                 <a href="{{ route('kelas.rincian', ['kelas' => $kelas->nama_kelas, 'level' => 'Pemula']) }}">
-                    <button class="btn  mb-2 btn-lg btn-block btn-outline-blue btn-rounded">Basic Class</button>
+                    <button class="btn  mb-2 btn-lg btn-block btn-outline-expert rounded-14">Basic Class</button>
                 </a>
                 <a href="{{ route('kelas.rincian', ['kelas' => $kelas->nama_kelas, 'level' => 'Intermediate']) }}">
-                    <button class="btn  mb-2 btn-lg btn-block btn-outline-blue btn-rounded">Intermediate Class</button>
+                    <button class="btn  mb-2 btn-lg btn-block btn-outline-expert rounded-14">Intermediate Class</button>
                 </a>
                 <a href="{{ route('kelas.rincian', ['kelas' => $kelas->nama_kelas, 'level' => 'Expert']) }}">
-                    <button class="btn  mb-2 btn-lg btn-block btn-outline-blue btn-rounded">Expert Class</button>
+                    <button class="btn  mb-2 btn-lg btn-block btn-outline-expert rounded-14">Expert Class</button>
                 </a>
             </div>
             <div class="col-md-12 mt-4">
