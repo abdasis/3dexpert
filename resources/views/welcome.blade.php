@@ -114,8 +114,9 @@
                                 <h4 class="text-center">{{ $testimoni->nama_peserta }}</h4>
                                 <p class="text-center text-primary">{{ $testimoni->nama_kampus }}</p>
                                 <div class="card-text text-center">
-                                {{ $testimoni->isi_testimoni }}
-
+                                    <div class="text-dark font-weight-semibold">
+                                    {{ $testimoni->isi_testimoni }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
