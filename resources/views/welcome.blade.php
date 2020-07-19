@@ -17,7 +17,7 @@
                                 dan fleksibel</p>
                             <div class="subscribe">
                                 <a href="{{ route('user.daftar') }}">
-                                    <button class="btn btn-light btn-rounded">Daftar Sekarang</button>
+                                    <button class="btn btn-light btn-rounded font-weight-bolder">Daftar Sekarang</button>
                                 </a>
                             </div>
                         </div>
