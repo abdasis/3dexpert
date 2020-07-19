@@ -91,15 +91,6 @@
             @endforeach
         </div>
         <!-- end row -->
-
-        <div class="row">
-            <div class="col-12">
-                <div class="text-center mt-4">
-                    <button class="btn btn-outline-success navbar-btn">Seluruh Pelanggan <i class="mdi mdi-arrow-right"></i></button>
-                </div>
-            </div>
-        </div>
-        <!-- end row -->
     </div> <!-- end container-fluid -->
 </section>
 <!-- available demos end -->
