@@ -102,7 +102,7 @@
 <!-- available demos end -->
 
 <!-- testimonial start -->
-<section class="section bg-gradient">
+<section class="section bg-gradient py-0">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
