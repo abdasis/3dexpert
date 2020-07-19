@@ -103,9 +103,10 @@
         <!-- end row -->
         <div class="row">
             <div class="col-12">
-                <div class="card-deck slider-testi">
+                <div class="card-deck-wrapper">
+                   <div class="card-deck slider-testi">
                     @foreach (App\Models\Testimoni::orderBy('created_at', 'DESC')->paginate(3) as $testimoni)
-                        <div class="card h-100 py-2" style="border-radius: 14px">
+                        <div class="card slider-content  h-100 py-2" style="border-radius: 14px">
                             <div class="card-img-top">
                                 <img src="{{ asset('foto-peserta') . '/' . $testimoni->foto_peserta }}" class="img-circle img-fluid mx-auto d-block foto-peserta" width="90px" alt="">
                             </div>
@@ -119,6 +120,7 @@
                             </div>
                         </div>
                     @endforeach
+                   </div>
                 </div>
             </div>
             <!-- end col -->
