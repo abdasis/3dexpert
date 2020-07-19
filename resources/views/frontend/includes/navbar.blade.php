@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
-    <div class="container-fluid">
-        <!-- LOGO -->
+    <div class="container-fluid px-0">
         <a class="logo text-uppercase" href="{{ url('/') }}">
             <img src="{{ url('/') }}/frontend/assets/images/logo-3dexpert.png" alt="" class="logo-light" height="40" />
             <img src="{{ url('/') }}/frontend/assets/images/logo-3dexpert.png" alt="" class="logo-dark" height="40" />
@@ -12,20 +11,20 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto" id="mySidenav">
                 <li class="nav-item active">
-                    <b><a href="{{ url('/') }}" class="nav-link">Home</a></b>
+                    <b><a href="{{ url('/') }}" class="nav-link font-16 font-weight-bold">Home</a></b>
                 </li>
                 <li class="nav-item">
-                    <b><a href="{{ route('kelas') }}" class="nav-link">Kategori Kelas</a></b>
+                    <b><a href="{{ route('kelas') }}" class="nav-link font-16 font-weight-bold">Kategori Kelas</a></b>
                 </li>
                 <li class="nav-item">
-                    <b><a href="{{ route('kelas-saya') }}" class="nav-link">Kelas Saya</a></b>
+                    <b><a href="{{ route('kelas-saya') }}" class="nav-link font-16 font-weight-bold">Kelas Saya</a></b>
                 </li>
                 <li class="nav-item">
-                    <b><a href="{{ route('order.invoice') }}" class="nav-link">Transaksi</a>
+                    <b><a href="{{ route('order.invoice') }}" class="nav-link font-16 font-weight-bold">Transaksi</a>
                     </b>
                 </li>
-                <li class="nav-item">
-                    <b><a href="{{ route('profile') }}" class="nav-link"> <i class="fa fa-user-circle"></i> Profil</a>
+                <li class="nav-item ml-5">
+                    <b><a href="{{ route('profile') }}" class="nav-link font-16 font-weight-bold link-profile"> <i class="fa fa-user-circle"></i> Profil</a>
                     </b>
                 </li>
             </ul>

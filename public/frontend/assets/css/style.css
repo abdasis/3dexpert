@@ -180,7 +180,7 @@ p {
     -webkit-transition: all 0.4s;
     transition: all 0.4s;
     background-color: transparent !important;
-    padding: 6px 10px;
+    padding: 6px 5px;
     margin: 0 7px;
     font-weight: 600;
 }
@@ -899,4 +899,9 @@ h4.widget-title {
 
 .img-fit {
     object-fit: scale-down;
+}
+
+.link-profile {
+    position: absolute;
+    right: 15px;
 }
