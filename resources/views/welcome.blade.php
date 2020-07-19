@@ -83,7 +83,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="title text-center mb-3">
-                    <h3>Pelanggan Kami</h3>
+                    <h3 class="font-weight-bolder">PELANGGAN KAMI</h3>
                 </div>
             </div>
         </div>
@@ -107,12 +107,12 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="title text-center mb-3">
-                    <h3>TESTIMONI</h3>
+                    <h3 class="font-weight-bolder">TESTIMONI</h3>
                 </div>
             </div>
         </div>
         <!-- end row -->
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-12">
                 <div class="card-deck-wrapper">
                    <div class="card-deck slider-testi">
@@ -135,6 +135,14 @@
                    </div>
                 </div>
             </div>
+
+            <div class="col-md-2 col-sm-12 align-self-center mt-5">
+                <a href="{{ route('user.daftar') }}" class=" text-center">
+                    <button class="btn btn-large btn-block btn-light rounded-14 font-weight-bolder">
+                        Daftar Sekarang
+                    </button>
+                </a>
+            </div>
             <!-- end col -->
         </div>
         <!-- end row -->
@@ -150,7 +158,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="text-center mb-5">
-                    <h3>FAQ | Hal yang sering ditanyakan</h3>
+                    <h3 class="font-weight-bolder">FAQ | HAL YANG SERING DITANYAKAN</h3>
                 </div>
             </div>
         </div>

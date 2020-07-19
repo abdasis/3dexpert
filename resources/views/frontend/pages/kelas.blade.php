@@ -22,7 +22,7 @@
                                 <h4 class="mb-2 text-white"> Mechanical Design </h4>
                             </div>
                         </div>
-                        <div class="dropdown-menu w-100 dropdown-box" id="level-kelas" aria-labelledby="dropdownMenu2">
+                        <div class="dropdown-menu rounded-14 w-100 dropdown-box" id="level-kelas" aria-labelledby="dropdownMenu2">
                             @foreach (App\Models\Course::where('kategori_kelas', 'Mechanical Design')->get() as $course)
                                 <a class="link-kelas" href="{{ route('kelas.tentang-kelas', ['kelas' => $course->nama_kelas]) }}">
                                     {{ $course->nama_kelas }}
@@ -44,7 +44,7 @@
                                 <h4 class="mb-2 text-white"> Architecture Design </h4>
                             </div>
                         </div>
-                        <div class="dropdown-menu w-100 dropdown-box" id="level-kelas" aria-labelledby="dropdownMenu2">
+                        <div class="dropdown-menu rounded-14 w-100 dropdown-box" id="level-kelas" aria-labelledby="dropdownMenu2">
                             @foreach (App\Models\Course::where('kategori_kelas', 'Architecture Design')->get() as $course)
                                 <a class="link-kelas" href="{{ route('kelas.tentang-kelas', ['kelas' => $course->nama_kelas]) }}">
                                     {{ $course->nama_kelas }}                            </a>
@@ -65,7 +65,7 @@
                                 <h4 class="mb-2 text-white"> Rendering And Animation </h4>
                             </div>
                         </div>
-                        <div class="dropdown-menu w-100 dropdown-box" id="level-kelas" aria-labelledby="dropdownMenu2">
+                        <div class="dropdown-menu rounded-14 w-100 dropdown-box" id="level-kelas" aria-labelledby="dropdownMenu2">
                             @foreach (App\Models\Course::where('kategori_kelas', 'Rendering And Animation')->get() as $course)
                                 <a class="link-kelas" href="{{ route('kelas.tentang-kelas', ['kelas' => $course->nama_kelas]) }}">
                                     {{ $course->nama_kelas }}
@@ -87,7 +87,7 @@
                                 <h4 class="mb-2 text-white"> Rencana Anggaran Biaya </h4>
                             </div>
                         </div>
-                        <div class="dropdown-menu w-100 dropdown-box"  id="level-kelas" aria-labelledby="dropdownMenu2">
+                        <div class="dropdown-menu rounded-14 w-100 dropdown-box"  id="level-kelas" aria-labelledby="dropdownMenu2">
                             @foreach (App\Models\Course::where('kategori_kelas', 'Rencana Anggaran Biaya')->get() as $course)
                                 <a class="link-kelas" href="{{ route('kelas.tentang-kelas', ['kelas' => $course->nama_kelas]) }}">
                                     {{ $course->nama_kelas }}
