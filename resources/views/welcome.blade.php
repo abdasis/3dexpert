@@ -9,8 +9,8 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="home-title mo-mb-20">
-                            <h1 class="mb-4 text-dark-blue font-weight-bolder">Dunia Terus Berkembang <br>
-                                Ayo Bergabung Bersama Kami
+                            <h1 class="mb-4 text-dark-blue font-28 font-weight-bolder">Dunia Terus Berkembang <br>
+                                Ayo Bergabung Bersama Kami <br>
                                 dan Menjadi Desainer Hebat!
                             </h1>
 
