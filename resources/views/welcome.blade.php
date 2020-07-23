@@ -138,7 +138,7 @@
 
             <div class="col-md-2 col-sm-12 align-self-center mt-5">
                 <a href="{{ route('user.daftar') }}" class=" text-center">
-                    <button class="btn btn-large btn-block btn-light rounded-14 font-weight-bolder">
+                    <button class="btn btn-large btn-block btn-light rounded-14 font-weight-bolder text-white" style="background: red">
                         Daftar Sekarang
                     </button>
                 </a>
