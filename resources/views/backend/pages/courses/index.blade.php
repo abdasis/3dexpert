@@ -43,7 +43,7 @@
                             <tr>
                                 <td>{{ $key+1 }}</td>
                                 <td><a href="{{ route('courses.edit', $course->id) }}">{{ $course->nama_kelas }}</a></td>
-                                <td><div class="badge {{ $course->level_kelas == 'Pemula' ? 'badge-info' : ($course->level_kelas == 'Expert' ? 'badge-success' : 'badge-warning') }}">{{ $course->level_kelas }}</div></td>
+                                <td><div class="badge {{ $course->level_kelas == 'Basic' ? 'badge-info' : ($course->level_kelas == 'Expert' ? 'badge-success' : 'badge-warning') }}">{{ $course->level_kelas }}</div></td>
                                 <td>{{ $course->nama_pengajar }}</td>
                                 <td>Rp. {{ number_format((int) $course->harga_kelas, 2, ',', '.') }}</td>
                                 <td>
@@ -52,16 +52,25 @@
                                     @endforeach
                                 </td>
                                 <td>
-                                    <a class="text-center" href="{{ route('materi.create', $course->nama_kelas) }}">
-                                        <button type="button" class="btn btn-success waves-effect waves-light btn-sm">
-                                            <span class="btn-label"><i class="mdi mdi-plus"></i></span>Materi
-                                        </button>
-                                    </a>
-                                    <a class="text-center" href="{{ route('testimoni.create', $course->nama_kelas) }}">
-                                        <button type="button" class="btn btn-danger waves-effect waves-light btn-sm">
-                                            <span class="btn-label"><i class="mdi mdi-plus"></i></span>Testimoni
-                                        </button>
-                                    </a>
+                                    <div class="row">
+                                        <a class="text-center" href="{{ route('materi.create', $course->nama_kelas) }}">
+                                            <button type="button" class="btn btn-success waves-effect waves-light btn-sm mr-1">
+                                                Materi
+                                            </button>
+                                        </a>
+                                        <a class="text-center" href="{{ route('testimoni.create', $course->nama_kelas) }}">
+                                            <button type="button" class="btn btn-danger waves-effect waves-light mr-1 btn-sm">
+                                                Testimoni
+                                            </button>
+                                        </a>
+                                        <form action="{{ route('courses.destroy', $course->id) }}" method="post" onsubmit="return confirm('Apakah yakin untuk hapus kelas ini?')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger btn-sm mr-1">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach

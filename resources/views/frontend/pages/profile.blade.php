@@ -15,8 +15,8 @@
                         <p class="text-center text-info">{{ Auth::user()->email }}</p>
                     </div>
                     <div class="card-body">
-                        <a href="{{ route('profile.edit', Auth::user()->id) }}">
-                            <button class="btn btn-expert btn-block">
+                        <a href="{{ route('profile.edit', Auth::user()->id) }}" >
+                            <button class="btn btn-expert btn-block mb-1">
                                 Edit Profile
                             </button>
                         </a>
@@ -47,7 +47,12 @@
                                     <td>{{ Auth::user()->email }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Universitas</th>
+                                    <th>Telepon</th>
+                                    <th>:</th>
+                                    <td>{{ Auth::user()->phone }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Institusi/Instansi</th>
                                     <th>:</th>
                                     <td>{{ empty(Auth::user()->universitas) ? '-' : Auth::user()->universitas  }}</td>
                                 </tr>

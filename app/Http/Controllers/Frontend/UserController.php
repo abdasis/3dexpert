@@ -53,6 +53,7 @@ class UserController extends Controller
         $user->password = Hash::make($request->get('password'));
         $user->universitas = $request->get('universitas');
         $user->roles = json_encode(['PESERTA']);
+        $user->phone = $request->get('phone');
         $user->save();
         alert()->success('Mantap', 'Pendaftaran berhasil dilakukan');
         return redirect()->route('profile');
@@ -99,6 +100,7 @@ class UserController extends Controller
             $newBiodata->jenis_kelamin = $request->get('jenis_kelamin');
             $newBiodata->alamat_lengkap = $request->get('alamat_lengkap');
             $newBiodata->biodata = $request->get('biodata');
+            $newBiodata->phone = $request->get('phone');
             $user->biodata()->save($newBiodata);
             Session::flash('status', 'Data Berhasil Diupdate');
             return redirect()->back();
@@ -107,6 +109,7 @@ class UserController extends Controller
             $biodata->jenis_kelamin = $request->get('jenis_kelamin');
             $biodata->alamat_lengkap = $request->get('alamat_lengkap');
             $biodata->biodata = $request->get('biodata');
+            $biodata->phone = $request->get('phone');
             $user->biodata()->save($biodata);
             Session::flash('status', 'Data Berhasil Diupdate');
             return redirect()->back();

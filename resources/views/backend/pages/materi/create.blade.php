@@ -35,6 +35,10 @@
                             <input type="text" class="form-control" name="nama_materi"  placeholder="Nama Kelas">
                         </div>
                         <div class="form-group">
+                            <label for="">Durasi Video</label>
+                            <input type="text" class="form-control" name="durasi_video"  placeholder="Durasi Video">
+                        </div>
+                        <div class="form-group">
                             <label for="">Diskripsi Materi</label>
                             <textarea  placeholder="Masukan Diksirpsi Kelas" name="diskripsi_materi">
 
@@ -55,6 +59,15 @@
                                 <input type="file" class="custom-file-input" id="trailer" name="thumbnail_materi">
                                 <label class="custom-file-label" for="trailer">Pilih Thubnail Materi</label>
                                 <small class="text-muted">Diisi bila ingin di tambilkan di home page</small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ebook-materi">Ebook Meteri</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="ebook_materi" name="ebook_materi">
+                                <label class="custom-file-label" for="ebook_materi">Pilih Ebook Materi</label>
+                                <small class="text-muted">Optional</small>
                             </div>
                         </div>
 

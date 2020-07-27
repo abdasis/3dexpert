@@ -33,17 +33,17 @@ class FrontendController extends Controller
     public function rincianKelas($kelas, $level = null)
     {
         $course = Course::where('nama_kelas', $kelas)->where('level_kelas', $level)->first();
-        if (Auth::user()) {
-            $cekOrder = Order::where('user_id', Auth::user()->id)
-                    ->join('course_order', 'course_order.order_id', '=', 'orders.id')
-                    ->where('course_id', $course->id)
-                    ->first();
-        }else{
-            $cekOrder = Course::where('nama_kelas', $kelas)->where('level_kelas', $level)->first();
-        }
         if (empty($course)) {
             abort(404, 'Tidak ada kelas yang tersedia');
         }else{
+            if (Auth::user()) {
+                $cekOrder = Order::where('user_id', Auth::user()->id)
+                        ->join('course_order', 'course_order.order_id', '=', 'orders.id')
+                        ->where('course_id', $course->id)
+                        ->first();
+            }else{
+                $cekOrder = Course::where('nama_kelas', $kelas)->where('level_kelas', $level)->first();
+            }
             $materis = $course->materis;
             $testimoni = $course->testimonis;
             return view('frontend.pages.rincian-kelas')->withCourse($course)->withMateris($materis)->withcekOrder($cekOrder)->withTestimonis($testimoni);
@@ -61,10 +61,6 @@ class FrontendController extends Controller
         ->join('course_order', 'course_order.order_id', '=', 'orders.id')
         ->leftJoin('courses', 'courses.id', '=', 'course_order.course_id')
         ->get();
-        if ($courses->count() < 1) {
-            alert()->warning('Maaf!!!', 'Belum ada kelas yang dibeli');
-            return redirect()->route('kelas');
-        }
         return view('frontend.pages.profile')->withCourses($courses);
     }
 

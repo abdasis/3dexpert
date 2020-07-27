@@ -19,7 +19,7 @@
                     <ul class="list-unstyled">
                         <li><a href="#"><i class="mdi mdi-chevron-right mr-2"></i>Kelas Tatap Muka</a></li>
                         <li><a href="#"><i class="mdi mdi-chevron-right mr-2"></i>Expert</a></li>
-                        <li><a href="#"><i class="mdi mdi-chevron-right mr-2"></i>Inesive Kelas</a></li>
+                        <li><a href="#"><i class="mdi mdi-chevron-right mr-2"></i>Intensive Kelas</a></li>
                     </ul>
                 </div>
             </div>

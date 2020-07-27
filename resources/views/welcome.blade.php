@@ -21,7 +21,7 @@
                                 dan fleksibel</p>
                             <div class="subscribe">
                                 <a href="{{ route('user.daftar') }}">
-                                    <button class="btn btn-light btn-rounded font-weight-bolder">Daftar Sekarang</button>
+                                    <button class="btn btn-light btn-rounded font-weight-bolder text-white" style="background: red">Daftar Sekarang</button>
                                 </a>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
                     </div>
                     <div class="course-text card-body">
                         <div class="card-text">
-                            <h4 class="mb-2 text-white "> <a class="text-white" href="{{ route('kelas.tentang-kelas', ['kelas' => $materi->course->nama_kelas]) }}">{{ $materi->judul_materi }}</a> </h4>
+                            <h4 class="mb-2 text-white "> <a class="text-white" href="{{ route('kelas.rincian', ['kelas' => $materi->course->nama_kelas, 'level' => $materi->course->level_kelas]) }}">{{ $materi->judul_materi }}</a> </h4>
                             <small class="text-white">{{ $materi->course->kategori_kelas }} </small>
                         </div>
                     </div>

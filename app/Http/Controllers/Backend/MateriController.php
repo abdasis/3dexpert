@@ -48,10 +48,17 @@ class MateriController extends Controller
 
         if ($request->hasFile('thumbnail_materi')) {
             $thumbnail = $request->file('thumbnail_materi');
-            $thumbnail_name = date('dmyhs-') . Str::slug($request->get('nama_materi'), '-') . '.' . $video->getClientOriginalExtension();
+            $thumbnail_name = date('dmyhs-') . Str::slug($request->get('nama_materi'), '-') . '.' . $thumbnail->getClientOriginalExtension();
             $thumbnail->move(public_path('thumbnail-materi'), $thumbnail_name);
         }else{
             $thumbnail_name = 'default_thumbnail.png';
+        }
+        if ($request->hasFile('ebook_materi')) {
+            $ebook = $request->file('ebook_materi');
+            $ebook_name = date('dmyhs-') . Str::slug($request->get('nama_materi'), '-') . '.' . $video->getClientOriginalExtension();
+            $ebook->move(public_path('ebook-materi'), $thumbnail_name);
+        }else{
+            $thumbnail_name = '';
         }
         $tambahCourse = $course->materis()->create([
             'judul_materi' => $request->get('nama_materi'),
@@ -59,8 +66,8 @@ class MateriController extends Controller
             'video_materi' => $video_name,
             'featured' => $request->get('featured'),
             'thumbnail_materi' => $thumbnail_name,
-            'ebook_materi' => 'default-ebook.pdf',
-            'durasi_materi' => '1 Jam 2 Menit',
+            'ebook_materi' => $ebook_name,
+            'durasi_materi' => $request->get('durasi_video'),
         ]);
 
         if ($tambahCourse) {

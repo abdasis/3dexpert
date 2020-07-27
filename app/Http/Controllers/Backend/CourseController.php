@@ -59,6 +59,8 @@ class CourseController extends Controller
         $courses->diskripsi_kelas = $request->get('diskripsi_kelas');
         $courses->nama_pengajar = $request->get('nama_pengajar');
         $courses->harga_kelas = $request->get('harga_kelas');
+        $courses->harga_coret = $request->get('harga_coret');
+        $courses->jumlah_video = $request->get('jumlah_video');
         $courses->rating_kelas = $request->get('rating_kelas');
         $courses->level_kelas = $request->get('level_kelas');
         $courses->kategori_kelas = $request->get('kategori_kelas');
@@ -167,7 +169,7 @@ class CourseController extends Controller
     {
         $course = Course::find($id);
         $course->delete();
-        return "Kelas Berhasil Dihapus";
+        return redirect()->back();
     }
 
     public function Dashboard()

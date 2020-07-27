@@ -6,22 +6,24 @@
         <div class="home-desc-center">
             <div class="container-fluid">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-5">
                         <div class="home-title mo-mb-20">
-                            <h1 class="mb-4 text-black-50">Dunia Terus Berkembang
+                            <h1 class="mb-4 text-dark">Dunia Terus Berkembang
                                 Ayo Bergabung Bersama Kami
                                 dan Menjadi Desainer Hebat !</h1>
-                            <p class="text-black-50-50 home-desc mb-5">3D Expert.id merupakan sebuah platform kelas desain 3D online
+                            <p class="text-dark home-desc mb-5">3D Expert.id merupakan sebuah platform kelas desain 3D online
                                 yang membantu kamu mendapat ilmu desain 3D dengan mudah
                                 dan fleksibel</p>
-                            <div class="subscribe">
-                                <button class="btn btn-blue" style="opacity: .9">Daftar Sekarang</button>
-                            </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 offset-xl-2 col-lg-5 offset-lg-1 col-md-7">
+                    <div class="col-xl-5 offset-xl-2 col-lg-5 offset-lg-1 col-md-7">
+                        <div class="card-box border-1 p-4  rounded-14">
+                            <div class="card-text">
+                                <p>
+                                    Daftar dan nikmati pengalaman belajar yang belum pernah kamu rasakan sebelumnya
+                                </p>
+                            </div>
 
-                        <div class="card-box border-1 p-4">
                             <form method="POST" action="{{ route('user.store') }}">
                                 @csrf
 
@@ -58,7 +60,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input id="universitas" type="text" class="form-control @error('universitas') is-invalid @enderror" name="universitas" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Universitas">
+                                    <input id="universitas" type="text" class="form-control @error('universitas') is-invalid @enderror" name="universitas" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Nama Instansi/Institusi">
 
                                     @error('universitas')
                                         <span class="invalid-feedback" role="alert">
@@ -68,9 +70,23 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-expert btn-block">
-                                        {{ __('Register') }}
+                                    <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Nomor Telepon">
+
+                                    @error('universitas')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn font-weight-bolder btn-expert btn-block rounded-14">
+                                        {{ __('Daftar Gratis') }}
                                     </button>
+                                </div>
+
+                                <div class="card-text">
+                                    Telah memiliki akun? <a href="{{ route('login') }}">Masuk</a>
                                 </div>
                             </form>
                         </div>

@@ -48,7 +48,7 @@
                             <label for="level_kelas">Level Kelas</label>
                             <select class="form-control" name="level_kelas" id="level_kelas">
                                 <option value="">Pilih Level</option>
-                                <option value="Pemula" {{ old('level_kelas') == 'Pemula' ? 'selected' : '' }}>Pemula</option>
+                                <option value="Basic" {{ old('level_kelas') == 'Basic' ? 'selected' : '' }}>Basic</option>
                                 <option value="Intermediate" {{ old('level_kelas') == 'Intermediate' ? 'selected' : '' }}>Intermediate</option>
                                 <option value="Expert" {{ old('level_kelas') == 'Expert' ? 'selected' : '' }}>Expert</option>
                             </select>
@@ -71,6 +71,18 @@
                             <label for="harga">Harga Kelas</label>
                             <input type="text" class="form-control" value="{{ old('harga_kelas') }}" name="harga_kelas" placeholder="Rp. 500000 ">
                         </div>
+
+                        <div class="form-group">
+                            <label for="harga_coret">Harga Coret</label>
+                            <input type="text" class="form-control" value="{{ old('harga_coret') }}" name="harga_coret" placeholder="Rp. 500000 ">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="harga">Jumlah Video</label>
+                            <input type="text" class="form-control" value="{{ old('jumlah_video') }}" name="jumlah_video" placeholder="Masukan kata-kata ">
+                        </div>
+
+
                         <div class="form-group">
                             <label for="harga">Rating Kelas</label>
                             <input type="text" class="form-control" name="rating_kelas" value="{{ old('rating_kelas') }}" placeholder="Masukan rating kelas">

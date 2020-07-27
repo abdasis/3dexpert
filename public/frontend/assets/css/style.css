@@ -617,7 +617,7 @@ p {
     .navbar-custom {
         margin-top: 0px;
         padding: 10px 0px !important;
-        background-color: #ffffff !important;
+        background-color: #28D6D7 !important;
         -webkit-box-shadow: 0 10px 33px -14px rgba(0, 0, 0, 0.1);
         box-shadow: 0 10px 33px -14px rgba(0, 0, 0, 0.1);
     }
@@ -648,6 +648,17 @@ p {
     }
     .mo-mb-20 {
         margin-bottom: 20px !important;
+    }
+    .navbar-nav {
+        background: #28D6D7;
+        width: 90%;
+        z-index: -999;
+        margin-top: 34px;
+        border-top: 4px solid;
+        margin-left: 0px !important;
+    }
+    .btn-row {
+        display: inline;
     }
 }
 
@@ -842,7 +853,7 @@ h4.widget-title {
 }
 
 .img-banner {
-    height: 650px;
+    height: 800px;
     width: 100%;
     object-fit: cover;
 }
@@ -907,7 +918,12 @@ h4.widget-title {
 
 .link-profile {
     position: absolute;
-    right: 15px;
+    right: 50px;
+}
+
+a.logo.text-uppercase {
+    position: absolute;
+    left: 50px;
 }
 
 .slick-track {
@@ -922,7 +938,7 @@ h4.widget-title {
 .btn-outline-expert {
     color: #44f1ec;
     background-color: transparent;
-    border-color: #44f1ec
+    border: 2px solid #44f1ec;
 }
 
 .text-dark-blue {
@@ -944,4 +960,12 @@ img.img-circle.img-fluid.mx-auto.d-block.foto-peserta {
     background-repeat: no-repeat;
     background-origin: border-box;
     background-size: cover;
+}
+
+.diskripsi-kelas p {
+    font-size: 17px;
+}
+
+button.vjs-big-play-button {
+    margin: 100px 240px;
 }

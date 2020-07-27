@@ -20,6 +20,8 @@ class CreateCoursesTable extends Migration
             $table->string('level_kelas', 100);
             $table->string('nama_pengajar', 100);
             $table->string('harga_kelas', 100);
+            $table->string('harga_coret', 100);
+            $table->string('jumlah_video', 250);
             $table->string('rating_kelas', 100);
             $table->string('trailer', 250);
             $table->string('thumbnail', 250);
