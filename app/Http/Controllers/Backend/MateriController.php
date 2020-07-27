@@ -56,9 +56,9 @@ class MateriController extends Controller
         if ($request->hasFile('ebook_materi')) {
             $ebook = $request->file('ebook_materi');
             $ebook_name = date('dmyhs-') . Str::slug($request->get('nama_materi'), '-') . '.' . $video->getClientOriginalExtension();
-            $ebook->move(public_path('ebook-materi'), $thumbnail_name);
+            $ebook->move(public_path('ebook-materi'), $ebook_name);
         }else{
-            $thumbnail_name = '';
+            $thumbnail_name = '-';
         }
         $tambahCourse = $course->materis()->create([
             'judul_materi' => $request->get('nama_materi'),
