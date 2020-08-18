@@ -26,7 +26,7 @@
                 <div class="card">
                     <div class="card-header">Biodata</div>
                     <div class="card-body">
-                        <form action="{{ route('profile.update', Auth::user()->id) }}" method="post" onsubmit="return confirm('Anda yakin update ini?')">
+                        <form action="{{ route('profile.update', Auth::user()->id) }}" method="post" >
                             @csrf
                             @method('PUT')
                             <table class="table table-borderless">
@@ -44,22 +44,37 @@
                                     <tr>
                                         <th>Universitas</th>
                                         <th>:</th>
-                                        <td><input type="text" class="form-control" name="universitas" placeholder="Masukan Universitas" value="{{ $biodata->universitas ?? '' }}"></td>
+                                        <td><input type="text" class="form-control" name="universitas" placeholder="Masukan Universitas" value="{{ $user->universitas ?? '' }}"></td>
                                     </tr>
                                     <tr>
                                         <th>Jenis Kelamin</th>
                                         <th>:</th>
-                                        <td><input type="text" class="form-control" name="jenis_kelamin" placeholder="Masukan Jenis Kelamin" value="{{ $biodata->jenis_kelamin ?? '' }}"></td>
+                                        <td><input type="text" class="form-control" name="jenis_kelamin" placeholder="Masukan Jenis Kelamin" value="{{ $user->jenis_kelamin ?? '' }}"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Telepon</th>
+                                        <th>:</th>
+                                        <td><input type="text" class="form-control" name="phone" placeholder="Masukan telepon" value="{{ $user->phone ?? '' }}"></td>
                                     </tr>
                                     <tr>
                                         <th>Alamat Lengkap</th>
                                         <th>:</th>
-                                        <td><textarea type="text" class="form-control" name="alamat_lengkap" placeholder="Masukan Alamat Lengkap">{{ $biodata->alamat_lengkap ?? '' }}</textarea></td>
+                                        <td><textarea type="text" class="form-control" name="alamat_lengkap" placeholder="Masukan Alamat Lengkap">{{ $user->alamat_lengkap ?? '' }}</textarea></td>
                                     </tr>
                                     <tr>
-                                        <th>Biodata</th>
+                                        <th>Diskripsikan Dirimu</th>
                                         <th>:</th>
-                                        <td><textarea type="text" class="form-control" rows="7" name="biodata" placeholder="Masukan Biodata">{{ $biodata->biodata ?? '' }}</textarea></td>
+                                        <td><textarea type="text" class="form-control" rows="7" name="biodata" placeholder="Saya seorang ...">{{ $user->biodata ?? '' }}</textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Upload Foto Profil</th>
+                                        <th>:</th>
+                                        <td>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="trailer" name="thumbnail_materi">
+                                                <label class="custom-file-label" for="trailer">Pilih foto</label>
+                                            </div>
+                                     </td>
                                     </tr>
                                     <tr>
                                         <td colspan="3">
@@ -68,6 +83,7 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                 </tbody>
                             </table>
                         </form>

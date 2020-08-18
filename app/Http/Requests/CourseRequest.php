@@ -26,9 +26,8 @@ class CourseRequest extends FormRequest
         return [
             'nama_kelas' => 'required|min:5',
             'nama_pengajar' => 'required|string',
-            'harga_kelas' => 'required|numeric',
+            'harga_kelas' => 'required',
             'rating_kelas' => 'required',
-            'trailer' => 'mimes:mp4|max:50000',
         ];
     }
 }

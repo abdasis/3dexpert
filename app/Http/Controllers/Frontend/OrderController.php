@@ -50,15 +50,13 @@ class OrderController extends Controller
                 ->where('course_id', $kelas->id)
                 ->where('user_id', Auth::user()->id)
                 ->get();
-
-
         if ($diorder->count() > 0) {
-            alert()->warning('Maaf', 'Anda telah membeli kelas ini');
-            return redirect()->route('kelas');
+            alert()->warning('Maaf', 'Kelas ini menunggu pembayaran, silahkan klik bayar sekarang');
+            return redirect()->route('order.invoice');
         }else {
             $orderKelas = new Order();
             $orderKelas->user_id = Auth::user()->id;
-            $orderKelas->total_price = $kelas->harga_kelas;
+            $orderKelas->total_price = preg_replace('/\D/', '', $kelas->harga_kelas);
             $orderKelas->invoice_number = rand(1, null) . date('ysmd');
             $orderKelas->status = 'BELUM';
             $orderKelas->save();
@@ -121,16 +119,24 @@ class OrderController extends Controller
     public function invoice()
     {
         $user = User::find(Auth::user()->id);
-        $order = Order::where('user_id', $user->id)
+        $order = Order::where('user_id', $user->id)->with('courses')
         ->where('status', 'BELUM')
         ->orderBy('created_at', 'DESC')
-        ->first();
+        ->get();
         if (!empty($order)) {
-            return view('frontend.pages.pembayaran')->withOrder($order);
+            return view('frontend.pages.pembayaran')->withOrders($order);
         }else{
             alert()->warning('Opppss', 'Anda belum memiliki pembelian kursus');
             return redirect()->route('kelas');
         }
+    }
+
+
+    public function uploadBukti(Request $request)
+    {
+        $course = Course::where('nama_kelas', $request->nama_kelas)
+        ->first();
+        return view('frontend.pages.orders.upload_bukti')->withOrder($course);
     }
 
 }

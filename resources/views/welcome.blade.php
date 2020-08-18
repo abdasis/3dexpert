@@ -9,7 +9,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="home-title mo-mb-20">
-                            <h1 class="mb-4 text-dark-blue font-28 font-weight-bolder">Dunia Terus Berkembang <br>
+                            <h1 class="mb-4 text-dark-blue font-28 font-weight-bolder" style="line-height: 38px">Dunia Terus Berkembang <br>
                                 Ayo Bergabung Bersama Kami <br>
                                 dan Menjadi Desainer Hebat!
                             </h1>
@@ -234,6 +234,31 @@
                         <div id="collapselima" class="collapse" aria-labelledby="headinglima" data-parent="#accordionExample">
                             <div class="card-body bg-white content-faq">
                           Kamu dapat belajar kapanpun dan dimanapun. Kamu bisa langsung belajar setelah melakukan pembayaran
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-transparent">
+                        <div class="card-header bg-transparent header-faq" id="headinglima">
+                            <h4 class="text-left faq-title" type="button" data-toggle="collapse" data-target="#collapseEnam" aria-expanded="true" aria-controls="collapseEnam">
+                                <i class="fa fa-plus-circle"></i>Bagaimana cara mengikuti kelas?
+                            </h4>
+                        </div>
+
+                        <div id="collapseEnam" class="collapse" aria-labelledby="headinglima" data-parent="#accordionExample">
+                            <div class="card-body bg-white content-faq">
+                                <ol type="1">
+                                    <li>Pastikan kamu sudah memiliki sebuah akun</li>
+                                    <li>Silahkan membuat akun jika belum memilikinya</li>
+                                    <li>Masuk ke website 3D Expert.id menggunakan Email dan Password pribadimu</li>
+                                    <li>Pilih kelas yang kamu butuhkan</li>
+                                    <li>Klik tombol beli kelas</li>
+                                    <li>Jika ada promo silahkan gunakan kode promo</li>
+                                    <li>Bayar sesuai dengan nominal yang tertera pada Harga Total</li>
+                                    <li>Jika selesai transfer silahkan upload bukti pembayaran dan klik konfirmasi pembayaran</li>
+                                    <li>Tunggu konfirmasi pembayaran dari admin</li>
+                                    <li>Jika status berwarna hijau (lunas) maka kelas siap di gunakan</li>
+                                </ol>
                             </div>
                         </div>
                     </div>

@@ -70,7 +70,7 @@ class CourseController extends Controller
             $trailer->move(public_path('trailer-kelas'), $trailer_name);
             $courses->trailer = $trailer_name;
         } else {
-            $courses->trailer = 'trailer-default.jpg';
+            $courses->trailer = 'trailer-default.mp4';
         }
 
         if ($request->hasFile('thumbnail')) {
@@ -82,11 +82,6 @@ class CourseController extends Controller
             $courses->thumbnail = 'thumbnail-default.jpg';
         }
         $courses->save();
-        if ($courses == false) {
-            if ($courses->trailer && file_exists(public_path('gambar-trailer') . $courses->trailer)) {
-                File::delete(public_path('gambar-trailer'), $courses->trailer);
-            }
-        }
         alert()->success('Berhasil', 'Data Berhasil Ditambahkan');
         return redirect()->back();
     }

@@ -21,7 +21,7 @@
                         <i class="fa fa-star text-warning"></i>
                     @endforeach
                 </p>
-                <h4 class="harga-asli text-expert"><strike>Rp. {{ $course->harga_kelas+190000 }}/Kelas</strike></h4>
+                <h4 class="harga-asli text-expert"><strike>Rp. {{ $course->harga_coret }}/Kelas</strike></h4>
                 <h3 class="harga-diskon text-expert text-white">Rp. {{ $course->harga_kelas }}</h3>
                 <p class="font-16 text-white">( 20 Chapter + Ebook )</p>
                 <a href="{{ Auth::check() ? route('order.create', ['kelas' => $course->nama_kelas, 'token' => csrf_token()]) : route('login') }}" target="{{ !Auth::check() ? 'blank' : '' }}">

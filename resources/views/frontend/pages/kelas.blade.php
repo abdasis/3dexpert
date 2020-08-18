@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="text-center mb-4 pb-1">
-                    <h3 class="mb-3 font-weight-bolder text-dark-blue">Pilih  Kelasmu</h3>
+                    <h1 class="mb-3 mt-4 font-weight-bolder text-dark-blue" style="font-size: 40px">Pilih  Kelasmu</h1>
                 </div>
             </div>
         </div>

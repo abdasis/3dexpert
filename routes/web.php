@@ -42,6 +42,7 @@ Route::put('profil/{user}', 'Frontend\UserController@update')->name('profile.upd
 Route::get('order/', 'Frontend\OrderController@create')->name('order.create')->middleware('auth');
 Route::post('checkout', 'Frontend\OrderController@store')->name('order.store')->middleware('auth');
 Route::get('invoice', 'Frontend\OrderController@invoice')->name('order.invoice')->middleware('auth');
+Route::get('upload-bukti', 'Frontend\OrderController@uploadBukti')->name('order.upload-bukti');
 Route::get('daftar', 'Frontend\UserController@create')->name('user.daftar');
 Route::post('daftar', 'Frontend\UserController@store')->name('user.store');
 Route::get('kelas-saya', 'Frontend\FrontendController@kelasSaya')->name('kelas-saya')->middleware('auth');

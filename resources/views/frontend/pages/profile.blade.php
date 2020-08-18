@@ -2,17 +2,17 @@
 
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
         <div class="row mt-100 mb-100">
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header">Profile</div>
+                    <div class="card-header text-dark"><h2>Profile</h2></div>
                     <div class="card-body">
                         <img src="{{ asset('backend/assets/images/users/user-2.jpg') }}" alt="" class="rounded-circle img-thumbnail rounded mx-auto d-block">
                         <h4 class="text-center">
                             {{ Auth::user()->name }}
                         </h4>
-                        <p class="text-center text-info">{{ Auth::user()->email }}</p>
+                        <p class="text-center text-info">{{ empty(Auth::user()) ? '-' : Auth::user()->biodata }}</p>
                     </div>
                     <div class="card-body">
                         <a href="{{ route('profile.edit', Auth::user()->id) }}" >
@@ -32,44 +32,34 @@
 
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Biodata</div>
+                    <div class="card-header text-dark"><h2>Biodata</h2></div>
                     <div class="card-body">
                         <table class="table table-borderless">
                             <tbody>
                                 <tr>
-                                    <th>Nama Lengkap</th>
-                                    <th>:</th>
-                                    <td>{{ Auth::user()->name }}</td>
+                                    <th class="text-dark">Nama Lengkap</th>
+                                    <th class="text-dark">:</th>
+                                    <td class="text-dark">{{ Auth::user()->name }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Email</th>
-                                    <th>:</th>
-                                    <td>{{ Auth::user()->email }}</td>
+                                    <th class="text-dark">Email</th>
+                                    <th class="text-dark">:</th>
+                                    <td class="text-dark">{{ Auth::user()->email }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Telepon</th>
-                                    <th>:</th>
-                                    <td>{{ Auth::user()->phone }}</td>
+                                    <th class="text-dark">Telepon</th>
+                                    <th class="text-dark">:</th>
+                                    <td class="text-dark">{{ Auth::user()->phone }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Institusi/Instansi</th>
-                                    <th>:</th>
-                                    <td>{{ empty(Auth::user()->universitas) ? '-' : Auth::user()->universitas  }}</td>
+                                    <th class="text-dark">Institusi/Instansi</th>
+                                    <th class="text-dark">:</th>
+                                    <td class="text-dark">{{ empty(Auth::user()->universitas) ? '-' : Auth::user()->universitas  }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Jenis Kelamin</th>
-                                    <th>:</th>
-                                    <td>{{ empty(Auth::user()->jenis_kelamin) ? '-' : Auth::user()->jenis_kelamin  }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Alamat Lengkap</th>
-                                    <th>:</th>
-                                    <td>{{ empty(Auth::user()->alamat_lengkap) ? '-' : Auth::user()->alamat_lengkap}}</td>
-                                </tr>
-                                <tr>
-                                    <th>Biodata</th>
-                                    <th>:</th>
-                                    <td>{{ empty(Auth::user()) ? '-' : Auth::user()->biodata }}</td>
+                                    <th class="text-dark">Alamat Lengkap</th>
+                                    <th class="text-dark">:</th>
+                                    <td class="text-dark">{{ empty(Auth::user()->alamat_lengkap) ? '-' : Auth::user()->alamat_lengkap}}</td>
                                 </tr>
                             </tbody>
 

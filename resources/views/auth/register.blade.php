@@ -8,18 +8,24 @@
                 <div class="row align-items-center">
                     <div class="col-lg-5">
                         <div class="home-title mo-mb-20">
-                            <h1 class="mb-4 text-dark">Dunia Terus Berkembang
+                            <h1 class="mb-4 text-dark-blue font-28 font-weight-bolder" style="line-height: 38px">
+                                Dunia Terus Berkembang <br>
                                 Ayo Bergabung Bersama Kami
-                                dan Menjadi Desainer Hebat !</h1>
-                            <p class="text-dark home-desc mb-5">3D Expert.id merupakan sebuah platform kelas desain 3D online
-                                yang membantu kamu mendapat ilmu desain 3D dengan mudah
-                                dan fleksibel</p>
+                                dan Menjadi Desainer Hebat !
+                            </h1>
+
+                            <hr class="garis-bawah">
+                            <p class="mb-5 text-dark-blue font-weight-semibold">3D Expert.id merupakan sebuah platform kelas desain 3D online
+                            yang membantu kamu mendapat ilmu desain 3D dengan mudah
+                            dan fleksibel</p>
+
                         </div>
+
                     </div>
                     <div class="col-xl-5 offset-xl-2 col-lg-5 offset-lg-1 col-md-7">
                         <div class="card-box border-1 p-4  rounded-14">
                             <div class="card-text">
-                                <p>
+                                <p class="text-dark font-weight-bolder font-18">
                                     Daftar dan nikmati pengalaman belajar yang belum pernah kamu rasakan sebelumnya
                                 </p>
                             </div>
@@ -80,7 +86,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <button type="submit" class="btn font-weight-bolder btn-expert btn-block rounded-14">
+                                    <button type="submit" class="btn font-weight-bolder text-dark btn-expert btn-block rounded-14">
                                         {{ __('Daftar Gratis') }}
                                     </button>
                                 </div>

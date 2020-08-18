@@ -17,6 +17,7 @@ class CreateBiodatasTable extends Migration
             $table->string('jenis_kelamin', 100)->nullable();
             $table->string('universitas', 100)->nullable();
             $table->string('alamat_lengkap', 100)->nullable();
+            $table->string('kota', 100)->nullable();
             $table->string('biodata', 100)->nullable();
             $table->string('roles', 100);
             $table->string('phone', 100)->nullable()->default('text');

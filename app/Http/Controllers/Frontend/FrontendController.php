@@ -40,6 +40,7 @@ class FrontendController extends Controller
                 $cekOrder = Order::where('user_id', Auth::user()->id)
                         ->join('course_order', 'course_order.order_id', '=', 'orders.id')
                         ->where('course_id', $course->id)
+                        ->where('status', 'AKTIF')
                         ->first();
             }else{
                 $cekOrder = Course::where('nama_kelas', $kelas)->where('level_kelas', $level)->first();
@@ -60,6 +61,7 @@ class FrontendController extends Controller
         $courses = Order::where('user_id', Auth::user()->id)
         ->join('course_order', 'course_order.order_id', '=', 'orders.id')
         ->leftJoin('courses', 'courses.id', '=', 'course_order.course_id')
+        ->where('status', 'AKTIF')
         ->get();
         return view('frontend.pages.profile')->withCourses($courses);
     }
@@ -70,6 +72,7 @@ class FrontendController extends Controller
         $courses = Order::where('user_id', Auth::user()->id)
         ->join('course_order', 'course_order.order_id', '=', 'orders.id')
         ->leftJoin('courses', 'courses.id', '=', 'course_order.course_id')
+        ->where('status', 'AKTIF')
         ->get();
 
         if (empty($courses)) {

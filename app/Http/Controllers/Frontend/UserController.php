@@ -79,8 +79,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        $biodata = $user->biodata;
-        return view('frontend.pages.update-profile')->withUser($user)->withBiodata($biodata);
+
+        return view('frontend.pages.update-profile')->withUser($user);
     }
 
     /**
@@ -92,16 +92,15 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        $biodata = Biodata::where('user_id', Auth::user()->id)->first();
+        $biodata = User::find($id);
         if (empty($biodata)) {
-            $newBiodata = new Biodata();
+            $newBiodata = new User();
             $newBiodata->universitas = $request->get('universitas');
             $newBiodata->jenis_kelamin = $request->get('jenis_kelamin');
             $newBiodata->alamat_lengkap = $request->get('alamat_lengkap');
             $newBiodata->biodata = $request->get('biodata');
             $newBiodata->phone = $request->get('phone');
-            $user->biodata()->save($newBiodata);
+            $newBiodata->save();
             Session::flash('status', 'Data Berhasil Diupdate');
             return redirect()->back();
         }else{
@@ -110,9 +109,9 @@ class UserController extends Controller
             $biodata->alamat_lengkap = $request->get('alamat_lengkap');
             $biodata->biodata = $request->get('biodata');
             $biodata->phone = $request->get('phone');
-            $user->biodata()->save($biodata);
+            $biodata->save();
             Session::flash('status', 'Data Berhasil Diupdate');
-            return redirect()->back();
+            return redirect()->route('profile', $biodata->id);;
         }
 
     }

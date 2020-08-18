@@ -1,6 +1,8 @@
 <?php
 
+use App\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,7 +13,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(RoleSeeder::class);
-        $this->call(UserSeeder::class);
+        $user = new User();
+        $user->name = "Admin";
+        $user->password = Hash::make('rahasia');
+        $user->email = 'admin@3dexpert.id';
+        $user->jenis_kelamin = 'L';
+        $user->universitas = 'UNESA';
+        $user->alamat_lengkap = "Bangkalan";
+        $user->biodata = "Data diri";
+        $user->roles = json_encode('ADMIN');
+        $user->phone = "000000000";
+        $user->save();
     }
 }

@@ -16,4 +16,10 @@ class Order extends Model
     {
         return $this->belongsToMany(Course::class, 'course_order');
     }
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
+
 }
