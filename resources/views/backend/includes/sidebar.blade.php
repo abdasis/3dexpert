@@ -86,6 +86,26 @@
                     </div>
                 </li>
 
+
+                <li>
+                    <a href="#sidebarVoucher" data-toggle="collapse">
+                        <i class="mdi mdi-percent-outline"></i>
+                        <span> Voucher </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarVoucher">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('voucher.create') }}">Tambah Voucher</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('voucher.index') }}">Daftar Voucher</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
                 <li>
                     <a href="#klien" data-toggle="collapse">
                         <i class="mdi mdi-account"></i>

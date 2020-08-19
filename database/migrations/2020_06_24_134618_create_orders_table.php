@@ -16,7 +16,7 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->ondDelete('cascade');
-            $table->float('total_price');
+            $table->string('total_price');
             $table->string('invoice_number', 100);
             $table->enum('status', ['AKTIF', 'BELUM']);
             $table->timestamps();

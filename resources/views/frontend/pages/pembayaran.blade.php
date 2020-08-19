@@ -5,6 +5,11 @@
     <div class="row justify-content-center mt-100">
         <div class="col-md-10">
             <div class="container">
+                @if (Session::has('status'))
+                    <div class="alert alert-success">{{ Session::get('status') }}</div>
+                @endif
+            </div>
+            <div class="container">
                 <table class="table">
                     <thead>
                         <tr>
@@ -25,15 +30,24 @@
                                 <td scope="row">{{ $key+1 }}</td>
                                 <td>{{ $course->nama_kelas }}</td>
                                 <td>{{ $order->invoice_number }}</td>
-                                <td>{{ $course->harga_kelas }}</td>
+                                <td>{{ $order->total_price }}</td>
                                 <td>{{ date('d-m-Y', strtotime($order->created_at)) }}</td>
-                                <td><button class="btn btn-sm btn-danger"><i class="mdi mdi-trash-can"></i></button></td>
+                                <td>
+                                    <form action="{{ route('order.destroy', $order->id) }}" method="post" onsubmit="return confirm('Yakin ingin menghapus pembelian ini?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-sm btn-danger"><i class="fa fa-trash-alt"></i></button>
+                                    </form>
+                                </td>
                                 <td>
                                     @if ($order->status == 'BELUM')
                                         <button class="btn btn-sm btn-danger">BELUM DIBAYAR</button>
                                     @elseif($order->status == 'AKTIF')
-                                        <button class="btn btn-sm btn-danger">SUDAH AKTIF</button>
+                                        <button class="btn btn-sm btn-success">SUDAH AKTIF</button>
+                                    @else
+                                        <button class="btn btn-sm btn-info">MENUNGGU VERIFIKASI</button>
                                     @endif
+
                                 </td>
                                 <td>
                                     <a href="{{ route('order.upload-bukti', ['order_id' => $order->id, 'nama_kelas' => $course->nama_kelas]) }}">

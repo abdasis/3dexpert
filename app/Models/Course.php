@@ -26,4 +26,9 @@ class Course extends Model
     {
         return $this->hasMany(Testimoni::class);
     }
+
+    public function voucher()
+    {
+        return $this->hasOne(Voucher::class);
+    }
 }

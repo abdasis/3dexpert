@@ -25,7 +25,7 @@
                     </div>
                     <div class="card-body">
                         <p class="text-center">Jumlah Tagihan</p>
-                        <h3 class="text-center">Rp. {{ $order->harga_kelas }}</h3>
+                        <h3 class="text-center">Rp. {{ $order->total_price }}</h3>
                     </div>
                     <div class="card-body">
                         <p class="text-center m-0">
@@ -60,12 +60,13 @@
                     </div>
 
                     <div class="card-body" style="background: #f5f5f5">
-                        <form action="#" method="post">
+                        <form action="{{ route('order.store-bukti-pembayaran') }}" method="post" enctype="multipart/form-data">
                             @csrf
+                            <input type="hidden" name="invoice_number" value="{{ $order->invoice_number }}">
                             <div class="form-group">
                                 <label for="thumbail_materi">Pilih bukti transfer</label>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="trailer" name="thumbnail_materi">
+                                    <input type="file" class="custom-file-input" id="trailer" name="foto_bukti">
                                     <label class="custom-file-label" for="trailer">Pilih bukti tranfer</label>
                                 </div>
                             </div>

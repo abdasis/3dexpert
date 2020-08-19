@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\Order;
+use App\Models\Voucher;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -30,9 +32,30 @@ class OrderController extends Controller
      */
     public function create(Request $request)
     {
-        $user = User::find(Auth::user()->id);
-        $kelas = Course::where('nama_kelas', $request->get('kelas'))->first();
-        return view('frontend.pages.orders.create')->withUser($user)->withKelas($kelas);
+        if ($request->get('voucher')) {
+            $user = User::find(Auth::user()->id);
+            $kelas = Course::where('nama_kelas', $request->get('kelas'))->first();
+            $voucher = Voucher::where('kode', $request->get('voucher'))
+            ->where('status', 'active')
+            ->first();
+            if ($voucher) {
+                if ($kelas->id === $voucher->course_id) {
+                    $diskon = Voucher::has('course')->first();
+                    Session::flash('diskon', 'Selamat anda mendapatkan diskon');
+                }else{
+                    Alert::warning('Maaf', 'Tidak ada diskon yang tersedia');
+                    return redirect()->back();
+                }
+            }else{
+                Alert::warning('maaf', 'tidak ada diskon yang tersedia');
+                return redirect()->back();
+            }
+            return view('frontend.pages.orders.create')->withUser($user)->withKelas($kelas)->withDiskon($diskon);
+        }else{
+            $user = User::find(Auth::user()->id);
+            $kelas = Course::where('nama_kelas', $request->get('kelas'))->first();
+            return view('frontend.pages.orders.create')->withUser($user)->withKelas($kelas);
+        }
     }
 
     /**
@@ -56,7 +79,7 @@ class OrderController extends Controller
         }else {
             $orderKelas = new Order();
             $orderKelas->user_id = Auth::user()->id;
-            $orderKelas->total_price = preg_replace('/\D/', '', $kelas->harga_kelas);
+            $orderKelas->total_price = $request->get('total_harga');
             $orderKelas->invoice_number = rand(1, null) . date('ysmd');
             $orderKelas->status = 'BELUM';
             $orderKelas->save();
@@ -113,14 +136,16 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $order = Order::find($id);
+        $order->delete();
+        Session::flash('status', 'Orderan berhasil dihapus');
+        return redirect()->back();
     }
 
     public function invoice()
     {
         $user = User::find(Auth::user()->id);
         $order = Order::where('user_id', $user->id)->with('courses')
-        ->where('status', 'BELUM')
         ->orderBy('created_at', 'DESC')
         ->get();
         if (!empty($order)) {
@@ -136,7 +161,24 @@ class OrderController extends Controller
     {
         $course = Course::where('nama_kelas', $request->nama_kelas)
         ->first();
-        return view('frontend.pages.orders.upload_bukti')->withOrder($course);
+        $order = Order::find($request->order_id);
+        return view('frontend.pages.orders.upload_bukti')->withOrder($order);
     }
+
+    public function storeBukti(Request $request)
+    {
+        $order =  Order::where('invoice_number', $request->invoice_number)->first();
+        $updateOrder = Order::find($order->id);
+        if ($request->hasFile('foto_bukti')) {
+            $gambar = $request->file('foto_bukti');
+            $nama_gambar = $request->get('invoice_number') . '-' . $order->user_id . $gambar->getClientOriginalExtension();
+            $gambar->move(public_path('foto_bukti', $nama_gambar));
+            $updateOrder->status = "MENUNGGU KONFIRMASI";
+        }
+        $updateOrder->save();
+        Session::flash('status', 'Pembayaran telah diterima, tunggu beberapa kami segera verifikasi kelas yang ada beli');
+        return redirect()->route('order.invoice');
+    }
+
 
 }

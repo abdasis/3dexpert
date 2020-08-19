@@ -22,8 +22,7 @@
 
     </head>
 
-    <body data-sidebar-size="default" data-sidebar-color="dark" data-layout-width="fluid" data-layout-menu-position="fixed" data-sidebar-showuser="true" data-topbar-color="light" class="right-bar-enabled">
-
+    <body class="loading" data-layout='{"topbar": {"color": "light"}}'>
         @include('sweetalert::alert')
 
         <!-- Begin page -->

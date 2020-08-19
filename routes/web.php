@@ -25,6 +25,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('clients', 'Backend\KlienController');
     Route::get('testimoni/{nama_kelas}', 'Backend\TestimoniController@create')->name('testimoni.create');
     Route::resource('testimoni', 'Backend\TestimoniController')->except(['create']);
+    Route::resource('voucher', 'Backend\VoucherController');
 });
 
 
@@ -39,10 +40,16 @@ Route::get('/pembayaran', 'Frontend\FrontendController@pembayaran')->name('pemba
 Route::get('profil', 'Frontend\FrontendController@profile')->name('profile')->middleware('auth');
 Route::get('profil/{user}', 'Frontend\UserController@edit')->name('profile.edit')->middleware('auth');
 Route::put('profil/{user}', 'Frontend\UserController@update')->name('profile.update')->middleware('auth');
+
 Route::get('order/', 'Frontend\OrderController@create')->name('order.create')->middleware('auth');
+Route::delete('order/{id}', 'Frontend\OrderController@destroy')->name('order.destroy')->middleware('auth');
+
 Route::post('checkout', 'Frontend\OrderController@store')->name('order.store')->middleware('auth');
 Route::get('invoice', 'Frontend\OrderController@invoice')->name('order.invoice')->middleware('auth');
+
 Route::get('upload-bukti', 'Frontend\OrderController@uploadBukti')->name('order.upload-bukti');
+Route::post('upload-bukti', 'Frontend\OrderController@storeBukti')->name('order.store-bukti-pembayaran');
+
 Route::get('daftar', 'Frontend\UserController@create')->name('user.daftar');
 Route::post('daftar', 'Frontend\UserController@store')->name('user.store');
 Route::get('kelas-saya', 'Frontend\FrontendController@kelasSaya')->name('kelas-saya')->middleware('auth');
