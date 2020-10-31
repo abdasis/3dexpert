@@ -31,6 +31,6 @@ class KelasDibayar extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.kelas-dibayar')->attach(public_path('foto_bukti' . '/' . $this->path));
+        return $this->view('mails.kelas-dibayar')->attach($this->path);
     }
 }
