@@ -43,7 +43,7 @@
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
-                                <td>{{ $user->telepon }}</td>
+                                <td>{{ $user->phone }}</td>
                                 <td>{{ $user->created_at }}</td>
                                 <td>
                                     {{-- <a href="{{ route('clients.edit', $client->id) }}" class="text-warning">
