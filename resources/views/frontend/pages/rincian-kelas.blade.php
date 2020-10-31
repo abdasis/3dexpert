@@ -24,7 +24,7 @@
                 <h4 class="harga-asli text-expert"><strike>Rp. {{ $course->harga_coret }}/Kelas</strike></h4>
                 <h3 class="harga-diskon text-expert text-white">Rp. {{ $course->harga_kelas }}</h3>
                 <p class="font-16 text-white">( 20 Chapter + Ebook )</p>
-                <a href="{{ Auth::check() ? route('order.create', ['kelas' => $course->nama_kelas, 'token' => csrf_token()]) : route('login') }}" target="{{ !Auth::check() ? 'blank' : '' }}">
+                <a href="{{ Auth::check() ? route('order.create', ['kelas' => $course->nama_kelas,  'level' => $course->level_kelas, 'token' => csrf_token()]) : route('login') }}" target="{{ !Auth::check() ? 'blank' : '' }}">
                     <button class="btn btn-danger btn-block py-2" style="background: #E80C27; border-radius: 15px">Beli Sekarang</button>
                 </a>
                </div>
@@ -59,7 +59,7 @@
             <h2 class="harga-asli text-white mt-2 mb-2"><strike>Rp. {{ $course->harga_coret }}/Kelas</strike></h2>
             <h1 class="harga-diskon text-expert mb-4 text-expert" style="font-size: 45px;">Rp. {{ $course->harga_kelas }}</h1>
             <p class="font-16 text-white">( 20 Chapter + Ebook )</p>
-            <a href="{{ Auth::check() ? route('order.create', ['kelas' => $course->nama_kelas, 'token' => csrf_token()]) : route('login') }}" target="{{ !Auth::check() ? 'blank' : '' }}">
+            <a href="{{ Auth::check() ? route('order.create', ['kelas' => $course->nama_kelas, 'level' => $course->level_kelas, 'token' => csrf_token()]) : route('login') }}" target="{{ !Auth::check() ? 'blank' : '' }}">
                 <button class="btn btn-danger btn-block py-2" style="background: #E80C27; border-radius: 15px">Beli Sekarang</button>
             </a>
         </div>
