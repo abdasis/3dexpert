@@ -87,7 +87,9 @@ class OrderController extends Controller
             $orderKelas->save();
             $couserOrder = Order::find($orderKelas->id);
             $kelas->orders()->attach($couserOrder, ['quantity'=> '1']);
-            Mail::to('3dexpert.cad@gmail.com')->send(new KelasDibeli($kelas));
+
+            $pembeli = User::find(Auth::user()->id);
+            Mail::to('3dexpert.cad@gmail.com')->send(new KelasDibeli($kelas, $pembeli));
             return redirect()->route('order.invoice');
         }
 

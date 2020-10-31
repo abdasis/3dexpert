@@ -17,9 +17,11 @@ class KelasDibeli extends Mailable
      * @return void
      */
     public $kelas;
-    public function __construct($kelas)
+    public $pembeli;
+    public function __construct($kelas, $pembeli)
     {
         $this->kelas  = $kelas;
+        $this->pembeli = $pembeli;
     }
 
     /**
