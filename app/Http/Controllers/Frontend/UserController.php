@@ -54,6 +54,7 @@ class UserController extends Controller
         $user->universitas = $request->get('universitas');
         $user->roles = json_encode(['PESERTA']);
         $user->phone = $request->get('phone');
+
         $user->save();
         alert()->success('Mantap', 'Pendaftaran berhasil dilakukan');
         return redirect()->route('profile');

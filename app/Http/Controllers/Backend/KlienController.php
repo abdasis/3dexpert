@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Klien;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
@@ -121,5 +122,13 @@ class KlienController extends Controller
             Session::flash('status', 'Data klien berhasil di hapus');
             return redirect()->back();
         }
+    }
+
+    public function daftarUser()
+    {
+        $uesrs = User::all();
+        return view('backend.pages.clients.user', [
+            'users' => $uesrs
+        ]);
     }
 }
