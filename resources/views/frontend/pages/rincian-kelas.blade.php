@@ -146,9 +146,9 @@
         <div class="card-silabus bg-black border-expert b-radius ">
             <div class="card-header bg-black b-radius" id="headingUpload">
                 <h4 class="text-left text-white" type="button" data-toggle="collapse" data-target="#collapseUpload" aria-expanded="true" aria-controls="collapseUpload">
-                    <i class="fa fa-plus-circle"></i>Upload Tugas
+                    <i class="fa fa-plus-circle"></i> Upload Tugas
                 </h4>
-                <p>Sesi untuk upload tugas</p>
+                <p>Sesi upload tugas</p>
             </div>
             <div id="collapseUpload" class="collapse text-white" aria-labelledby="headingUpload" data-parent="#accordionUpload">
                 <div class="card-body pt-0 pb-2">
@@ -158,11 +158,11 @@
                                 <div class="col-md-12">
                                     <div class="row mb-3">
                                         <div class="col-md-5">
-                                            {{-- <img class="w-100 img-fit" src="{{ asset('thumbnail-materi') . '/' . $materi->thumbnail_materi }}" alt=""> --}}
+                                        <img class="w-100 img-fit" src="{{ asset('thumbnail-materi') . '/' . $materi->thumbnail_materi }}" alt="">
                                         </div>
                                         <div class="col-md-7">
                                             <p class="font-16 font-weight-bold">Video Pembelajaran</p>
-                                            {{-- <p class="font-16 text-expert font-weight-bold">{{ $materi->durasi_materi }}</p> --}}
+                                            <p class="font-16 text-expert font-weight-bold">{{ $materi->durasi_materi }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -176,8 +176,8 @@
                                         <img class="w-100 img-fit" height="80" src="{{ asset('frontend/assets/images/icons/pdf.png') }}" alt="">
                                         </div>
                                         <div class="col-md-8">
-                                            <p class="font-16 font-weight-bold">Tugas</p>
-                                            <p class="font-16 text-expert font-weight-bold">Upload Tugas</p>
+                                            <p class="font-16 font-weight-bold">Ebook</p>
+                                            <p class="font-16 text-expert font-weight-bold">Download PDF</p>
                                         </div>
                                     </div>
                                 </div>
@@ -191,8 +191,8 @@
                                         <img class="w-100 img-fit" height="80" src="{{ asset('frontend/assets/images/icons/pdf.png') }}" alt="">
                                         </div>
                                         <div class="col-md-8">
-                                            <p class="font-16 font-weight-bold">Sertificateok</p>
-                                            <p class="font-16 text-expert font-weight-bold">Download Sertifikat</p>
+                                            <p class="font-16 font-weight-bold">Ebook</p>
+                                            <p class="font-16 text-expert font-weight-bold">Download PDF</p>
                                         </div>
                                     </div>
                                 </div>
