@@ -97,9 +97,18 @@
                                     <div class="col-md-12">
                                         <div class="row mb-3">
                                             <div class="col-md-5">
-                                            <a href="{{ route('kelas.video', ['kelas' => $course->nama_kelas, 'materi' => $materi->judul_materi]) }}">
+
+                                                @if (App\Model\Order::where('status', 'AKTIF')->where('user_id', Auth::user()->id)->first())
+                                                <a href="{{ route('kelas.video', ['kelas' => $course->nama_kelas, 'materi' => $materi->judul_materi]) }}">
+                                                    <img class="w-100 img-fit" src="{{ asset('thumbnail-materi') . '/' . $materi->thumbnail_materi }}" alt="">
+                                                </a>
+                                                @else
                                                 <img class="w-100 img-fit" src="{{ asset('thumbnail-materi') . '/' . $materi->thumbnail_materi }}" alt="">
-                                            </a>
+                                                @endif
+
+                                                <a href="{{ route('kelas.video', ['kelas' => $course->nama_kelas, 'materi' => $materi->judul_materi]) }}">
+                                                    <img class="w-100 img-fit" src="{{ asset('thumbnail-materi') . '/' . $materi->thumbnail_materi }}" alt="">
+                                                </a>
                                             </div>
                                             <div class="col-md-7">
                                                 <p class="font-16 font-weight-bold">Video Pembelajaran</p>
