@@ -174,7 +174,7 @@
                                     <div class="col-md-12">
                                         <div class="row mb-3">
                                             <div class="col-md-4">
-                                            {{-- <img class="w-100 img-fit" height="80" src="{{ asset('frontend/assets/images/icons/pdf.png') }}" alt=""> --}}
+                                            <img class="w-100 img-fit" height="80" src="{{ asset('frontend/assets/images/icons/pdf.png') }}" alt="">
                                             </div>
                                             <div class="col-md-8">
                                                 <p class="font-16 font-weight-bold">Upload Tugas</p>
