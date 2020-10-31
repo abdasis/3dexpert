@@ -97,7 +97,9 @@
                                     <div class="col-md-12">
                                         <div class="row mb-3">
                                             <div class="col-md-5">
-                                            <img class="w-100 img-fit" src="{{ asset('thumbnail-materi') . '/' . $materi->thumbnail_materi }}" alt="">
+                                            <a href="{{ route('kelas.video', ['kelas', $course->nama_kelas, 'materi' => $materi->judul_materi]) }}">
+                                                <img class="w-100 img-fit" src="{{ asset('thumbnail-materi') . '/' . $materi->thumbnail_materi }}" alt="">
+                                            </a>
                                             </div>
                                             <div class="col-md-7">
                                                 <p class="font-16 font-weight-bold">Video Pembelajaran</p>
