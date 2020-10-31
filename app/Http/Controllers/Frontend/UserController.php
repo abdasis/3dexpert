@@ -106,6 +106,12 @@ class UserController extends Controller
             $newBiodata->alamat_lengkap = $request->get('alamat_lengkap');
             $newBiodata->biodata = $request->get('biodata');
             $newBiodata->phone = $request->get('phone');
+            if ($request->has('photo_profile')) {
+                $photo = $request->file('photo_profile');
+                $photo_name = $photo->getClientOriginalName();
+                $biodata->photo_profile = $photo_name;
+                $photo->move(public_path('backend/assets/images/users'), $photo_name);
+            }
             $newBiodata->save();
             Session::flash('status', 'Data Berhasil Diupdate');
             return redirect()->back();
@@ -115,6 +121,12 @@ class UserController extends Controller
             $biodata->alamat_lengkap = $request->get('alamat_lengkap');
             $biodata->biodata = $request->get('biodata');
             $biodata->phone = $request->get('phone');
+            if ($request->has('photo_profile')) {
+                $photo = $request->file('photo_profile');
+                $photo_name = $photo->getClientOriginalName();
+                $biodata->photo_profile = $photo_name;
+                $photo->move(public_path('backend/assets/images/users'), $photo_name);
+            }
             $biodata->save();
             Session::flash('status', 'Data Berhasil Diupdate');
             return redirect()->route('profile', $biodata->id);;
