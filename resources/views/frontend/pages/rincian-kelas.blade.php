@@ -144,11 +144,11 @@
         </div>
         @endforeach
         <div class="card-silabus bg-black border-expert b-radius ">
-            <div class="card-header bg-black b-radius" id="heading{{ $materi->id }}">
-                <h4 class="text-left text-white" type="button" data-toggle="collapse" data-target="#collapse{{ $materi->id }}" aria-expanded="true" aria-controls="collapse{{ $materi->id }}">
-                    <i class="fa fa-plus-circle"></i> {{ $materi->judul_materi }}
+            <div class="card-header bg-black b-radius" id="headingUpload">
+                <h4 class="text-left text-white" type="button" data-toggle="collapse" data-target="#collapseUpload" aria-expanded="true" aria-controls="collapseUpload">
+                    <i class="fa fa-plus-circle"></i>Upload Tugas
                 </h4>
-                <p>{!! $materi->diskripsi_materi !!}</p>
+                <p>Sesi untuk upload tugas</p>
             </div>
             <div id="collapseUpload" class="collapse text-white" aria-labelledby="headingUpload" data-parent="#accordionUpload">
                 <div class="card-body pt-0 pb-2">
