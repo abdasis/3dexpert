@@ -54,7 +54,12 @@ class UserController extends Controller
         $user->universitas = $request->get('universitas');
         $user->roles = json_encode(['PESERTA']);
         $user->phone = $request->get('phone');
-
+        if ($request->has('photo_profile')) {
+            $photo = $request->file('photo_profile');
+            $photo_name = $photo->getClientOriginalName();
+            $user->photo_profile = $photo_name;
+            $photo->move(public_path('backend/assets/images/users'), $photo_name);
+        }
         $user->save();
         alert()->success('Mantap', 'Pendaftaran berhasil dilakukan');
         return redirect()->route('profile');

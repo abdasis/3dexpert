@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-header">Profile</div>
                     <div class="card-body">
-                        <img src="{{ asset('backend/assets/images/users/user-2.jpg') }}" alt="" class="rounded-circle img-thumbnail rounded mx-auto d-block">
+                        <img src="{{ asset('backend/assets/images/users/') . Auth::user()->photo_profile ?? asset('backend/assets/images/users/user-2.jpg') }}" alt="" class="rounded-circle img-thumbnail rounded mx-auto d-block">
                         <h4 class="text-center">
                             {{ Auth::user()->name }}
                         </h4>
@@ -71,7 +71,7 @@
                                         <th>:</th>
                                         <td>
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="trailer" name="thumbnail_materi">
+                                                <input type="file" class="custom-file-input" id="trailer" name="photo_profile">
                                                 <label class="custom-file-label" for="trailer">Pilih foto</label>
                                             </div>
                                      </td>
