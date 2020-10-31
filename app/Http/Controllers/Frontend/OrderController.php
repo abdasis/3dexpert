@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Mail\KelasDibeli;
 use App\Models\Course;
 use App\Models\Order;
 use App\Models\Voucher;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -85,8 +87,10 @@ class OrderController extends Controller
             $orderKelas->save();
             $couserOrder = Order::find($orderKelas->id);
             $kelas->orders()->attach($couserOrder, ['quantity'=> '1']);
+            Mail::to('3dexpert.cad@gmail.com')->send(new KelasDibeli($kelas));
             return redirect()->route('order.invoice');
         }
+
 
 
 
