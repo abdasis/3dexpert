@@ -121,6 +121,10 @@
                                 <a href="{{ route('clients.index') }}">Daftar Klien</a>
                             </li>
 
+                            <li>
+                                <a href="{{ route('user') }}">Daftar User</a>
+                            </li>
+
                         </ul>
                     </div>
                 </li>
@@ -131,25 +135,7 @@
                         <span> Pembayaran </span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="sidebarCrm">
-                        <ul class="nav-second-level">
-                            <li>
-                                <a href="crm-dashboard.html">Dashboard</a>
-                            </li>
-                            <li>
-                                <a href="crm-contacts.html">Contacts</a>
-                            </li>
-                            <li>
-                                <a href="crm-opportunities.html">Opportunities</a>
-                            </li>
-                            <li>
-                                <a href="crm-leads.html">Leads</a>
-                            </li>
-                            <li>
-                                <a href="crm-customers.html">Customers</a>
-                            </li>
-                        </ul>
-                    </div>
+
                 </li>
 
             </ul>

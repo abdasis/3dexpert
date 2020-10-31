@@ -26,7 +26,7 @@
                 <div class="card">
                     <div class="card-header">Biodata</div>
                     <div class="card-body">
-                        <form action="{{ route('profile.update', Auth::user()->id) }}" method="post" >
+                        <form action="{{ route('profile.update', Auth::user()->id) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <table class="table table-borderless">
