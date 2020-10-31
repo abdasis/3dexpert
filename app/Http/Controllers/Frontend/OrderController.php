@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Mail\KelasDibayar;
 use App\Mail\KelasDibeli;
 use App\Models\Course;
 use App\Models\Order;
@@ -178,11 +179,12 @@ class OrderController extends Controller
         if ($request->hasFile('foto_bukti')) {
             $gambar = $request->file('foto_bukti');
             $nama_gambar = $request->get('invoice_number') . '-' . $order->user_id . $gambar->getClientOriginalExtension();
-            $gambar->move(public_path('foto_bukti', $nama_gambar));
+            $path = $gambar->move(public_path('foto_bukti', $nama_gambar));
             $updateOrder->status = "MENUNGGU KONFIRMASI";
         }
         $updateOrder->save();
         Session::flash('status', 'Pembayaran telah diterima, tunggu beberapa kami segera verifikasi kelas yang ada beli');
+        Mail::to('3dexpert.cad@gmail.com')->send(new KelasDibayar($order, $path));
         return redirect()->route('order.invoice');
     }
 

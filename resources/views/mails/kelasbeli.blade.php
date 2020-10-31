@@ -7,7 +7,7 @@
     <title>Kelas Dibeli</title>
 </head>
 <body>
-    Kelas Berhasil Dibeli Dengan Rincian Sebagai Berikut
+    Kelas Berhasil Dibeli Menunggu Pembayaran Dengan Rincian Sebagai Berikut
 
     <table>
         <tr>
