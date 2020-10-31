@@ -67,7 +67,7 @@ class OrderController extends Controller
     public function store(Request $request)
     {
 
-        $kelas = Course::where('nama_kelas', $request->get('kelas'))->where('level_kelas', $request->get('level'))->first();
+        $kelas = Course::where('nama_kelas', $request->get('kelas'))->where('level_kelas', $request->get('level_kelas'))->first();
         $diorder = Order::leftJoin('course_order', 'course_order.order_id', '=', 'orders.id')
                 ->select('course_order.*')
                 ->where('course_id', $kelas->id)
