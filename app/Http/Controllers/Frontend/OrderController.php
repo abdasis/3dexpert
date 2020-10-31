@@ -34,7 +34,7 @@ class OrderController extends Controller
     {
         if ($request->get('voucher')) {
             $user = User::find(Auth::user()->id);
-            $kelas = Course::where('nama_kelas', $request->get('kelas'))->first();
+            $kelas = Course::where('nama_kelas', $request->get('kelas'))->where('level_kelas', $request->get('level_kelas'))->first();
             $voucher = Voucher::where('kode', $request->get('voucher'))
             ->where('status', 'active')
             ->first();
@@ -67,7 +67,7 @@ class OrderController extends Controller
     public function store(Request $request)
     {
 
-        $kelas = Course::where('nama_kelas', $request->get('kelas'))->where('level_kelas', $request->get('level_kelas'))->first();
+        $kelas = Course::where('nama_kelas', $request->get('kelas'))->first();
         $diorder = Order::leftJoin('course_order', 'course_order.order_id', '=', 'orders.id')
                 ->select('course_order.*')
                 ->where('course_id', $kelas->id)
