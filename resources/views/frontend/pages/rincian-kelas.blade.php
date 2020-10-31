@@ -142,7 +142,7 @@
                 </div>
             </div>
         </div>
-
+        @endforeach
         <div class="accordion b-radius mb-2" id="accordionUpload" >
             <div class="card-silabus bg-black border-expert b-radius ">
                 <div class="card-header bg-black b-radius" id="headingUpload">
@@ -204,8 +204,6 @@
                 </div>
             </div>
         </div>
-        @endforeach
-
         <div class="mt-5">
             <a href="https://facebook.com">
                 <button class="btn btn-danger btn-block"><i class="fa fa-shopping-basket mr-1"></i>Beli Kelas</button>
