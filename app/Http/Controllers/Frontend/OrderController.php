@@ -181,7 +181,7 @@ class OrderController extends Controller
             $nama_gambar = $request->get('invoice_number') . '-' . $order->user_id . $gambar->getClientOriginalExtension();
             $gambar->move(public_path('foto_bukti', $nama_gambar));
             $updateOrder->status = "MENUNGGU KONFIRMASI";
-            $path = public_path('foto_bukti') . '/' . $nama_gambar;
+            $path = $nama_gambar;
         }
         $updateOrder->save();
         Session::flash('status', 'Pembayaran telah diterima, tunggu beberapa kami segera verifikasi kelas yang ada beli');
