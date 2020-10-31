@@ -53,7 +53,7 @@ class OrderController extends Controller
             return view('frontend.pages.orders.create')->withUser($user)->withKelas($kelas)->withDiskon($diskon);
         }else{
             $user = User::find(Auth::user()->id);
-            $kelas = Course::where('nama_kelas', $request->get('kelas'))->first();
+            $kelas = Course::where('nama_kelas', $request->get('kelas'))->where('level_kelas', $request->get('level_kelas'))->first();
             return view('frontend.pages.orders.create')->withUser($user)->withKelas($kelas);
         }
     }
